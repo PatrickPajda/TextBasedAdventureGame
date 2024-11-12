@@ -5,7 +5,7 @@
 #include "HauntedHouse.hpp"
 
 class LivingRoom : public HauntedHouse {
-  public:
+    public:
   LivingRoom();
   void describe() override;
 };
