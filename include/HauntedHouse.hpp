@@ -5,8 +5,11 @@
 
 class HauntedHouse {
   public:
-  
-  private:
+  virtual ~HauntedHouse() = default;
+  virtual void describe() = 0;
+  public:
+  HauntedHouse(const std::string& desc) : description(desc) {}
+  protected:
   std::string description;
 
 };
