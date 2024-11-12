@@ -4,10 +4,10 @@
 #include <string>
 
 class HauntedHouse {
-public:
+  public:
   virtual ~HauntedHouse() = default;
   virtual void describe() = 0;
-protected:
+  protected:
   HauntedHouse(const std::string& desc) : description(desc) {}
   std::string description;
 };
