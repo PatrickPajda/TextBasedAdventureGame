@@ -18,7 +18,7 @@
  * for the living room. It overrides the describe() method to give a description of the room.
  */
 class LivingRoom : public HauntedHouse {
-public:
+ public:
     /**
      * @brief Default constructor for the LivingRoom class.
      * 
