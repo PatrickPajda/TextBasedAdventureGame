@@ -10,7 +10,6 @@ public:
 protected:
   HauntedHouse(const std::string& desc) : description(desc) {}
   std::string description;
-
 };
 
 #endif //HAUNTEDHOUSE_HPP_INCLUDED

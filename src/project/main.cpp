@@ -5,7 +5,7 @@
 
 int main() {
     HauntedHouse* room = new LivingRoom();
-    std::cout << "You find yourself in a Haunted House. Right now you are in an empty room. What would would like to do?" << std::endl;
+    std::cout << "You find yourself in a Haunted House. Right now you are in an" << "empty room. What would would like to do?" << std::endl;
     std::string choice;
     while (true) {
         std::cout << "1. Enter the next room." << std::endl;
@@ -28,7 +28,8 @@ int main() {
             std::cout << "Exiting Game. Thank-you for playing!" << std::endl;
             break;
         } else {
-            std::cout << "Invalid Choice. Please pick valid choice." << std::endl;
+            std::cout << "Invalid Choice. Please pick" << 
+            "valid choice." << std::endl;
         }
     }
 

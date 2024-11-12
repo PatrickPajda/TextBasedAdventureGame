@@ -1,11 +1,11 @@
 #ifndef LIVINGROOM_HPP_INCLUDED
 #define LIVINGROOM_HPP_INCLUDED
-#include "HauntedHouse.hpp"
 #include <iostream>
 #include <string>
+#include "HauntedHouse.hpp"
 
 class LivingRoom : public HauntedHouse {
-  public:
+public:
   LivingRoom();
   void describe() override;
 };
