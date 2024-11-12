@@ -5,7 +5,7 @@
 
 int main() {
     HauntedHouse* room = new LivingRoom();
-    std::cout << "You find yourself in a Haunted House. Right now you are " << "empty room. " << 
+    std::cout << "You find yourself in a Haunted House. Right now you are " << "empty room. " <<
     "What would would like to do?" << std::endl;
     std::string choice;
     while (true) {
