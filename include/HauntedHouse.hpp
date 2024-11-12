@@ -7,9 +7,8 @@ class HauntedHouse {
   public:
   virtual ~HauntedHouse() = default;
   virtual void describe() = 0;
-  public:
-  HauntedHouse(const std::string& desc) : description(desc) {}
   protected:
+  HauntedHouse(const std::string& desc) : description(desc) {}
   std::string description;
 
 };
