@@ -4,12 +4,12 @@
 #include <string>
 
 class HauntedHouse {
-public:
- virtual ~HauntedHouse() = default;
- virtual void describe() = 0;
+  public:
+  virtual ~HauntedHouse() = default;
+  virtual void describe() = 0;
  protected:
-  HauntedHouse(const std::string& desc) : description(desc) {}
-  std::string description;
+ HauntedHouse(const std::string& desc) : description(desc) {}
+ std::string description;
 };
 
 #endif //HAUNTEDHOUSE_HPP_INCLUDED
