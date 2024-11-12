@@ -17,7 +17,7 @@
  * derived from this class must implement the describe() method to provide its own description.
  */
 class HauntedHouse {
-public:
+ public:
     /**
      * @brief Virtual destructor.
      * 
@@ -32,7 +32,7 @@ public:
      */
     virtual void describe() = 0;
 
-protected:
+ protected:
     /**
      * @brief Protected constructor for the HauntedHouse class.
      * 
