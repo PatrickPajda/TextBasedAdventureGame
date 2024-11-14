@@ -24,6 +24,7 @@ Certain assumptions have been made:
   * There is a <code>main.cpp</code> found in <code>src/project/</code>.
 
 7 of November |
+
 Our group held a meeting where each member present their own UML deisgn for discussion. Through collabrative feedback and discussion, we developed a revised UML diagram that incorporated the best ideas from each deisgn. 
 John and Patrick then took the responsibility for creating the final version of the UML diagram and preparing the report, which they submitted on behalf of the group. we also agreed to hold two coding sessions during reading week to advanced our project.
   
