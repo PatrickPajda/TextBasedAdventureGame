@@ -27,4 +27,7 @@ Certain assumptions have been made:
 
 Our group held a meeting where each member present their own UML deisgn for discussion. Through collabrative feedback and discussion, we developed a revised UML diagram that incorporated the best ideas from each deisgn. 
 John and Patrick then took the responsibility for creating the final version of the UML diagram and preparing the report, which they submitted on behalf of the group. we also agreed to hold two coding sessions during reading week to advanced our project.
-  
+
+12 of November |
+
+Durnig our coding session, we made foundational progress by setting up individual branches and creating essential classes: Naomi developed room navigation for player movement. Anita implemented an item interaction class for picking up objecs. Patrick built initial rooms, focusing on the Haunted House and Living Room, to enable specific interactions.  
