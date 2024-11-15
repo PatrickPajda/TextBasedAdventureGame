@@ -7,8 +7,10 @@
 #include "Item.hpp"
 
 int main() {
+    RoomNavigation* startRoom = new RoomNavigation();
     HauntedHouse* room = new LivingRoom();
-    Player* player;
+    Player* player = new Player(startRoom);
+    Item* itemInRoom = new Item("Item", "It looks like an item!", true);
 
     std::cout << "You find yourself in a Haunted House. Right now you are " << "empty room. " <<
     "What would would like to do?" << std::endl;
@@ -17,7 +19,8 @@ int main() {
         std::cout << "1. Enter the next room." << std::endl;
         std::cout << "2. Interact. (Describe the room)" << std::endl;
         std::cout << "3. Pick up object." << std::endl;
-        std::cout << "4. Exit game." <<std::endl;
+        std::cout << "4. Drop the item." << std::endl;
+        std::cout << "5. Exit Game." << std::endl;
         std::cout << "Choice: ";
         std::getline(std::cin, choice);
 
@@ -26,12 +29,12 @@ int main() {
             break;
         } else if (choice == "2") {
             room->describe();
-            delete room;
             break;
         } else if (choice == "3") {
-            std::cout << "You picked up an Item." << std::endl;
-            break;
+            player->pickUp(itemInRoom);
         } else if (choice == "4") {
+            player->drop(itemInRoom);
+        } else if (choice == "5") {
             std::cout << "Exiting Game. Thank-you for playing!" << std::endl;
             break;
         } else {
@@ -40,6 +43,9 @@ int main() {
         }
     }
 
+    delete room;
+    delete startRoom;
+    delete player;
 
     return 0;
 }

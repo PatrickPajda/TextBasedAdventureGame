@@ -7,6 +7,7 @@
 #define PLAYER_HPP
 
 #include "RoomNavigation.hpp"
+#include "Item.hpp"
 
 /**
  * @class Player
@@ -33,9 +34,18 @@ class Player {
      * @brief Moves to next room
      */
     void move();
+    /** 
+     * @brief Pick up item 
+     */
+    void pickUp(Item* newItem);
+        /** 
+     * @brief Drop item 
+     */
+    void drop(Item* newItem);
 
  private:
     RoomNavigation* currentRoom;
+    Item* item;
 };
 
 #endif //PLAYER_HPP

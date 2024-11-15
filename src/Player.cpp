@@ -17,3 +17,21 @@ void Player::move() {
         std::cout << "There is no other room to move to!" << std::endl;
     }
 }
+
+void Player::pickUp(Item* newItem) {
+    if (item == nullptr) {
+        item = newItem;
+        std::cout << "You picked up an Item!" << std::endl;
+    } else {
+        std::cout << "You already picked up an Item!" << std::endl;
+    }
+}
+
+void Player::drop(Item* newItem) {
+    if (item == nullptr) {
+        std::cout << "You have no items to drop silly." << std::endl;
+    } else {    
+    std::cout << "You dropped the item!" << std::endl;
+    item = nullptr;
+    }
+}
