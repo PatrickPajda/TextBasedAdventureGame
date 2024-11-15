@@ -1,27 +1,27 @@
 /**
  * @author Anita Naserfallah
- * @file InteractObject.cpp
+ * @file Item.cpp
  * @brief Represent an object in the game that can be interacted with
  */
 
-#include "InteractableObject.hpp"
+#include "Item.hpp"
 
 //Constructor implementation
-InteractableObject::InteractableObject(std::string name,
+Item::Item(std::string name,
  std::string description, bool isPickable)
     : name(name), description(description), isPickable(isPickable) {}
 
 //Getter for the name
-std::string InteractableObject::getName() const {
+std::string Item::getName() const {
     return name;
 }
 
 //Getter for description
-std::string InteractableObject::getDescription() const {
+std::string Item::getDescription() const {
     return description;
 }
 
 //Check if the object can be picked up
-bool InteractableObject::canBePicked() const {
+bool Item::canBePicked() const {
     return isPickable;
 }

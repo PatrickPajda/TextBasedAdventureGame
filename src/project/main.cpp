@@ -2,9 +2,14 @@
 #include <string>
 #include "HauntedHouse.hpp"
 #include "LivingRoom.hpp"
+#include "RoomNavigation.hpp"
+#include "Player.hpp"
+#include "Item.hpp"
 
 int main() {
     HauntedHouse* room = new LivingRoom();
+    Player* player;
+
     std::cout << "You find yourself in a Haunted House. Right now you are " << "empty room. " <<
     "What would would like to do?" << std::endl;
     std::string choice;
@@ -17,7 +22,7 @@ int main() {
         std::getline(std::cin, choice);
 
         if (choice == "1") {
-            std::cout << "You exit the room into the next room." << std::endl;
+            player->move();
             break;
         } else if (choice == "2") {
             room->describe();

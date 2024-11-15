@@ -1,4 +1,6 @@
 #include "RoomNavigation.hpp"
+#include <iostream>
+#include <string>
 
 RoomNavigation::RoomNavigation() : nextRoom(nullptr) {}
 
