@@ -12,7 +12,8 @@ int main() {
     Player* player = new Player(startRoom);
     Item* itemInRoom = new Item("Item", "It looks like an item!", true);
 
-    std::cout << "You find yourself in a Haunted House. Right now you are " << "empty room. " <<
+    std::cout << "You find yourself in a Haunted House."
+    << "Right now you are " << "empty room. " <<
     "What would would like to do?" << std::endl;
     std::string choice;
     while (true) {
@@ -38,7 +39,7 @@ int main() {
             std::cout << "Exiting Game. Thank-you for playing!" << std::endl;
             break;
         } else {
-            std::cout << "Invalid Choice. Please pick" << 
+            std::cout << "Invalid Choice. Please pick" <<
             "valid choice." << std::endl;
         }
     }

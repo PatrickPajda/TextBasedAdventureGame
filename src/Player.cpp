@@ -30,7 +30,7 @@ void Player::pickUp(Item* newItem) {
 void Player::drop(Item* newItem) {
     if (item == nullptr) {
         std::cout << "You have no items to drop silly." << std::endl;
-    } else {    
+    } else { 
     std::cout << "You dropped the item!" << std::endl;
     item = nullptr;
     }
