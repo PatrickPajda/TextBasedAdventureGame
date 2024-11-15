@@ -21,6 +21,7 @@ int main() {
             break;
         } else if (choice == "2") {
             room->describe();
+            delete room;
             break;
         } else if (choice == "3") {
             std::cout << "You picked up an Item." << std::endl;
