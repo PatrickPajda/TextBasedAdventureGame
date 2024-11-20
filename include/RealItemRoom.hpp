@@ -8,6 +8,8 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <memory>
 #include "HauntedHouse.hpp"
 
 /**
@@ -22,9 +24,9 @@ class RealItemRoom : public HauntedHouse {
     /**
      * @brief Default constructor for the RealItemRoom class.
      * 
-     * Initializes the RealItem with a predefined description.
+     * Initializes the RealItem with a predefined description and items.
      */
-    RealItemRoom();
+    RealItemRoom(std::unique_ptr<Item> realItem, std::unique_ptr<Item> fakeItem);
 
     /**
      * @brief Describes the RealItemRoom.
@@ -51,6 +53,8 @@ class RealItemRoom : public HauntedHouse {
      * function that kills the player by outputing a death message and then we can call the game end contition
      */
     void updateItems()
+ private:
+    std::vector<std::unique_ptr<Item>> items;
 };
 
 #endif // REALITEMROM_HPP_INCLUDED
