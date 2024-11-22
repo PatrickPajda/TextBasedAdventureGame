@@ -30,7 +30,6 @@ int main() {
             break;
         } else if (choice == "2") {
             room->describe();
-            break;
         } else if (choice == "3") {
             player->pickUp(itemInRoom);
         } else if (choice == "4") {
