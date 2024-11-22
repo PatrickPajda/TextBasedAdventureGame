@@ -30,4 +30,14 @@ John and Patrick then took the responsibility for creating the final version of 
 
 12 of November |
 
-Durnig our coding session, we made foundational progress by setting up individual branches and creating essential classes: Naomi developed room navigation for player movement. Anita implemented an item interaction class for picking up objecs. Patrick built initial rooms, focusing on the Haunted House and Living Room, to enable specific interactions.  
+Durnig our coding session, we made foundational progress by setting up individual branches and creating essential classes: Naomi developed room navigation for player movement. Anita implemented an item interaction class for picking up objecs. Patrick built initial rooms, focusing on the Haunted House and Living Room, to enable specific interactions. John implemented the NPC class, enabling players to interact with non-playable characters which are monsters in the game.
+
+21 of November |
+
+As of today, we have completed the basic implementation of core functionalities. Players can now Move between different rooms, Pick up and drop items, interact with rooms, and interact with NPCs.
+we plan to design and implement classes and features:
+1. LivingRoom class: serves as a general area for player interaction.
+2. RealItemRoom class: contains both real and fake items. players must find the correct(real) item to give to the NPC to progress to the next level. Giving a fake item results in the payer taking damage.
+3. FakeItemRoom class: contains fake and death items. Giving a fake item to the NPC will cause damage and giving fake item to NPC more than 2 times results in death. Picking up or interacting with a death item results in instant death.
+4. DeathRoom class: Entering this room or interacting with Certain objects inside results in instant death.
+We also outlined the structure of game levels: Level 1: Main Floor, Level 2: Basement, Level 3: Garden.
