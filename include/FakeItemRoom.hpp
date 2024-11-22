@@ -3,13 +3,13 @@
  * @brief Defines the FakeItemRoom class, a specific type of room in the haunted house adventure game.
  */
 
-#ifndef FAKEITEMROM_HPP_INCLUDED
-#define FAKEITEMROM_HPP_INCLUDED
+//#ifndef FAKEITEMROM_HPP_INCLUDED
+//#define FAKEITEMROM_HPP_INCLUDED
 
-#include <iostream>
-#include <string>
-#include "HauntedHouse.hpp"
-#include "Item.hpp"
+//#include <iostream>
+//#include <string>
+//#include "HauntedHouse.hpp"
+//#include "Item.hpp"
 
 /**
  * @class FakeItemRoom
@@ -18,14 +18,14 @@
  * This class inherits from HauntedHouse and provides a specific implementation
  * for the DeathTrap room. It overrides the describe() method to give a description of the room.
  */
-class FakeItemRoom : public HauntedHouse {
- public:
+//class FakeItemRoom : public HauntedHouse {
+ //public:
     /**
      * @brief Default constructor for the FakeItemRoom class.
      * 
      * Initializes the FakeItem with a predefined description and room items.
      */
-    FakeItemRoom(std::unique_ptr<Item> deathItem, std::unique_ptr<Item> fakeItem);
+    //FakeItemRoom(std::unique_ptr<Item> deathItem, std::unique_ptr<Item> fakeItem);
 
     /**
      * @brief Describes the FakeItemRoom.
@@ -33,7 +33,7 @@ class FakeItemRoom : public HauntedHouse {
      * Overrides the describe() function from HauntedHouse to print out a description
      * specific to the room Provides a description of the storage room containing two items and exit options.
      */
-    void describe() override;
+    //void describe() override;
 
     /**
      * @brief Player inspects the room 
@@ -43,17 +43,17 @@ class FakeItemRoom : public HauntedHouse {
      * Player is given the option to pick up one of two items.
      * 
      */
-    void inspectRoom() override;
+    //void inspectRoom() override;
 
     /**
      * @brief Causes the player to fall into a trap, resulting in death. 
      * 
      * function that kills the player by outputing a death message and then we can call the game end contition
      */
-    void updateItems()
- private:
-    std::vector<std::unique_ptr<Item>> items;
+    //void updateItems()
+ //protected:
+    //std::vector<std::unique_ptr<Item>> items;
 
-};
+//};
 
-#endif // FAKEITEMROM_HPP_INCLUDED
+//#endif // FAKEITEMROM_HPP_INCLUDED

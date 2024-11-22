@@ -51,4 +51,4 @@ class Item {
     bool isPickable;
 };
 
-#endif
+#endif //ITEM_HPP

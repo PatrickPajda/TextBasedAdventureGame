@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include "HauntedHouse.hpp"
+//#include "NPC.hpp"
 
 /**
  * @class LivingRoom
@@ -33,13 +34,17 @@ class LivingRoom : public HauntedHouse {
      * specific to the living room.
      */
     void describe() override;
-    
+
     /**
      * @brief  Enables interaction with the NPC present in the room
      * 
      * Calls NPCs interactiion from refrence 
      */
     void interactWithNPC();
+    
+ protected:
+ //NPC* monster;
+ bool isExit;
 
 
 };

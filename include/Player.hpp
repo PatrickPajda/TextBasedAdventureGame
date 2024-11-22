@@ -48,4 +48,4 @@ class Player {
     Item* item;
 };
 
-#endif //PLAYER_HPP
+#endif //PLAYER_HPP_INCLUDED

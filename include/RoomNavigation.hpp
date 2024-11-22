@@ -28,4 +28,4 @@ class RoomNavigation {
     RoomNavigation* nextRoom;
 };
 
-#endif //ROOM_NAVIGATION_HPP
+#endif //ROOM_NAVIGATION_HPP_INCLUDED

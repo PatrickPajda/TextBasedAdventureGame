@@ -3,15 +3,15 @@
  * @date 2024-11
  */
 
-#include "Skeleton.h"
-#include <iostream>
+//#include "Skeleton.hpp"
+//#include <iostream>
 
-Skeleton::Skeleton(Item* item)
-    : NPC("Skeleton", "You hear bones clattering... Bring me the amulet of the dead!", item) {}
+//Skeleton::Skeleton(Item* item)
+    //: NPC("Skeleton", "You hear bones clattering... Bring me the amulet of the dead!", item) {}
 
-void Skeleton::interact() const {
-    std::cout << "The Skeleton rattles its bones. " << name << " says: " << dialogue << std::endl;
-}
+//void Skeleton::interact() const {
+    //std::cout << "The Skeleton rattles its bones. " << name << " says: " << dialogue << std::endl;
+//}
 
-void  Skeleton::dance() const {
-}
+//void  Skeleton::dance() const {
+//}

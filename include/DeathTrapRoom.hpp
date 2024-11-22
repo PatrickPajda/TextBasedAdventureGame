@@ -3,12 +3,12 @@
  * @brief Defines the DeathTrapRoom class, a specific type of room in the haunted house adventure game.
  */
 
-#ifndef DEATHTRAPROOM_HPP_INCLUDED
-#define DEATHTRAPROOM_HPP_INCLUDED
+//#ifndef DEATHTRAPROOM_HPP_INCLUDED
+//#define DEATHTRAPROOM_HPP_INCLUDED
 
-#include <iostream>
-#include <string>
-#include "HauntedHouse.hpp"
+//#include <iostream>
+//#include <string>
+//#include "HauntedHouse.hpp"
 
 /**
  * @class LivingRoom
@@ -17,14 +17,14 @@
  * This class inherits from HauntedHouse and provides a specific implementation
  * for the DeathTrap room. It overrides the describe() method to give a description of the room.
  */
-class DeathTrapRoom : public HauntedHouse {
- public:
+//class DeathTrapRoom : public HauntedHouse {
+ //public:
     /**
      * @brief Default constructor for the DeathTrapRoom class.
      * 
      * Initializes the DeathTrapRoom with a predefined description.
      */
-    DeathTrapRoom();
+    //DeathTrapRoom();
 
     /**
      * @brief Describes the DeathTrapRoom.
@@ -33,7 +33,7 @@ class DeathTrapRoom : public HauntedHouse {
      * specific to the DeathTrap room.
      * Describes the trap room with a trap and exit options.
      */
-    void describe() override;
+    //void describe() override;
 
     /**
      * @brief Player inspects the room 
@@ -41,7 +41,7 @@ class DeathTrapRoom : public HauntedHouse {
      * Overrides the inspectRoom() function from HauntedHouse to give options 
      * Player inspects the room and can approach a trap or return to the previous room. 
      */
-    void inspectRoom() override;
+    //void inspectRoom() override;
 
 
     /**
@@ -49,7 +49,7 @@ class DeathTrapRoom : public HauntedHouse {
      * 
      * function that kills the player by outputing a death message and then we can call the game end contition
      */
-    void killPlayer()
-};
+    //void killPlayer();
+//};
 
-#endif // DEATHTRAPROOM_HPP_INCLUDED
+//#endif // DEATHTRAPROOM_HPP_INCLUDED

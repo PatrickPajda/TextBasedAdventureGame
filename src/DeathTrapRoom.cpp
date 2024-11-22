@@ -1,20 +1,20 @@
 
-# include "DeathTrapRoom.hpp"
+//# include "DeathTrapRoom.hpp"
 
-DeathTrapRoom::DeathTrapRoom() {
+//DeathTrapRoom::DeathTrapRoom() {
 
-}
+//}
 
-void DeathTrapRoom::describe(){
+//void DeathTrapRoom::describe(){
 
-}
+//}
 
-void DeathTrapRoom::inspectRoom(){
+//void DeathTrapRoom::inspectRoom(){
 
-}
+//}
 
-void DeathTrapRoom::killPlayer(){
+//void DeathTrapRoom::killPlayer(){
 
-}
+//}
 
 
