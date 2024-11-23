@@ -6,45 +6,62 @@
 #ifndef HAUNTEDHOUSE_HPP_INCLUDED
 #define HAUNTEDHOUSE_HPP_INCLUDED
 
-#include <iostream>
 #include <string>
+#include <map>
+#include <iostream>
 
 /**
  * @class HauntedHouse
  * @brief Abstract base class representing a room in the haunted house.
- * 
- * This class provides a foundation for different rooms in the haunted house game. Each room type 
- * derived from this class must implement the describe() method to provide its own description.
+ *
+ * This class provides a foundation for
+ * different rooms in the haunted house game. Each room type
+ * derived from this class must implement the
+ * describe() method to provide its own description.
  */
 class HauntedHouse {
+ protected:
+    /** @brief A string containing the room's description. */
+    std::string description; // Description of the room
+
  public:
     /**
-     * @brief Virtual destructor.
-     * 
-     * Ensures derived class destructors are called correctly.
-     */
-    virtual ~HauntedHouse() = default;
-
-    /**
-     * @brief Pure virtual function for describing the room.
-     * 
-     * Derived classes must implement this function to provide a description of the specific room.
-     */
-    virtual void describe() = 0;
-
- protected:
-    /**
      * @brief Protected constructor for the HauntedHouse class.
-     * 
+     *
      * Initializes the room's description.
-     * 
+     *
      * @param desc A string description of the room.
      */
     HauntedHouse(const std::string& desc) : description(desc) {}
 
-    /** @brief A string containing the room's description. */
-    std::string description;
+    /**
+     * @brief Virtual destructor.
+     *
+     * Ensures derived class destructors are called correctly.
+     */
+    virtual ~HauntedHouse() = default;
+
+
+   //  virtual void describe() = 0;
+
+   /**
+     * @brief Pure virtual function for describing the room.
+     *
+     * Derived classes must implement this function
+     * to provide a description of the specific room.
+     */
+    virtual void describe() {
+        std::cout << description << std::endl;
+    }
+
+   /**
+     * @brief virtual function for outputing the options for the room
+     *
+     * Return available actions as a map
+     * (e.g., 1 -> "Talk to NPC", 2 -> "Move to Room 1")
+     */
+
+    virtual std::map<int, std::string> getActions() const = 0;
 };
 
 #endif // HAUNTEDHOUSE_HPP_INCLUDED
-
