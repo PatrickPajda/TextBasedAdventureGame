@@ -45,20 +45,20 @@ int main() {
         }
     }
 
-    Item* realItem = new Item("Real Item", "This is the real item!", true);
+   // Item* realItem = new Item("Real Item", "This is the real item!", true);
 
-    std::vector<Item*> fakeItems;
-    fakeItems.push_back(new Item("Fake Item #1", "This is fake item #1", true));
-    fakeItems.push_back(new Item("Fake Item #2", "This is fake item #2", true));
-    fakeItems.push_back(new Item("Fake Item #3", "This is fake item #3", true));
+    //std::vector<Item*> fakeItems;
+   // fakeItems.push_back(new Item("Fake Item #1", "This is fake item #1", true));
+   // fakeItems.push_back(new Item("Fake Item #2", "This is fake item #2", true));
+   // fakeItems.push_back(new Item("Fake Item #3", "This is fake item #3", true));
 
-    RealItemRoom* realItemRoom = new RealItemRoom(realItem, fakeItems);
+   // RealItemRoom* realItemRoom = new RealItemRoom(realItem, fakeItems);
 
-    realItemRoom->describe();
+   // realItemRoom->describe();
 
-    realItemRoom->inspectRoom();
+   // realItemRoom->inspectRoom();
 
-    delete realItemRoom;
+   // delete realItemRoom;
     delete itemInRoom;
     delete player;
     delete room;
