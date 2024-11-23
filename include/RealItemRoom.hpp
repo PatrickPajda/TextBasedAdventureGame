@@ -3,30 +3,31 @@
  * @brief Defines the RealItemRoom class, a specific type of room in the haunted house adventure game.
  */
 
-//#ifndef REALITEMROM_HPP_INCLUDED
-//#define REALITEMROM_HPP_INCLUDED
+#ifndef REALITEMROM_HPP_INCLUDED
+#define REALITEMROM_HPP_INCLUDED
 
-//#include <iostream>
-//#include <string>
-//#include <vector>
-//#include <memory>
-//#include "HauntedHouse.hpp"
+#include <iostream>
+#include <string>
+#include <vector>
+#include <memory>
+#include "HauntedHouse.hpp"
+#include "Item.hpp"
 
 /**
  * @class RealItemRoom
  * @brief Represents the RealItemRoom in the haunted house.
  * 
  * This class inherits from HauntedHouse and provides a specific implementation
- * for the DeathTrap room. It overrides the describe() method to give a description of the room.
+ * for the RealItemRoom room. It overrides the describe() method to give a description of the room.
  */
-//class RealItemRoom : public HauntedHouse {
- //public:
+class RealItemRoom : public HauntedHouse {
+ public:
     /**
      * @brief Default constructor for the RealItemRoom class.
      * 
      * Initializes the RealItem with a predefined description and items.
      */
-    //RealItemRoom(std::unique_ptr<Item> realItem, std::unique_ptr<Item> fakeItem);
+    RealItemRoom(std::unique_ptr<Item> realItem, std::vector<std::unique_ptr<Item>> fakeItems);
 
     /**
      * @brief Describes the RealItemRoom.
@@ -35,26 +36,29 @@
      * specific to the room 
      * Provides a description of the storage room containing two items and exit options.
      */
-    //void describe() override;
+    void RealItemRoom::describe() override {
+      std::cout << "This is the Real Item Room." << description << std::endl;
+    }
 
     /**
      * @brief Player inspects the room 
      * 
      * Overrides the inspectRoom() function from HauntedHouse to give options 
      * for what to do in a specific to the RealItem room.
-     * Player is given the option to pick up one of two items.
+     * Player is given the option to pick up one of 4 items.
      * 
      */
-    //void inspectRoom() override;
+   //void inspectRoom() override;
 
     /**
-     * @brief Causes the player to fall into a trap, resulting in death. 
+     * @brief Update the number of items in room. 
      * 
-     * function that kills the player by outputing a death message and then we can call the game end contition
+     * Function that updates the amount of items in the room.
      */
-    //void updateItems()
- //protected:
-    //std::vector<std::unique_ptr<Item>> items;
-//};
+    void updateItems();
+ protected:
+    std::unique_ptr<Item> realItem_;
+    std::vector<std::unique_ptr<Item>> fakeItems_;
+};
 
-//#endif // REALITEMROM_HPP_INCLUDED
+#endif // REALITEMROM_HPP_INCLUDED

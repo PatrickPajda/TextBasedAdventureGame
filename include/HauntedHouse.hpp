@@ -32,6 +32,13 @@ class HauntedHouse {
      */
     virtual void describe() = 0;
 
+    /**
+     * @brief Pure virtual function for inspecting the room.
+     * 
+     * Function allows you interact with the items in the room.
+     */
+    virtual void inspect() = 0;
+
  protected:
     /**
      * @brief Protected constructor for the HauntedHouse class.
