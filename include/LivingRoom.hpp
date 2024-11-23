@@ -1,4 +1,9 @@
 /**
+ * @author Patrick Pajda, John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-11, 2024-11
+ */
+
+/**
  * @file LivingRoom.hpp
  * @brief Defines the LivingRoom class, a specific type of room in the haunted house adventure game.
  */

@@ -1,3 +1,7 @@
+/**
+ * @author Patrick Pajda, John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-11, 2024-11
+ */
 #include "LivingRoom.hpp"
 
 LivingRoom::LivingRoom() : HauntedHouse("You are standing in the living room. "
