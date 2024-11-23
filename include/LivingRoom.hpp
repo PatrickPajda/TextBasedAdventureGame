@@ -41,14 +41,8 @@ class LivingRoom : public HauntedHouse {
    * Overrides the getActions() function from HauntedHouse to print out options
    * populates the map of options
    */
-   std::map<int, std::string> getActions() const override {
-      return {
-         {1, "Talk to the NPC"},
-         {2, "Move to Room 1 (Kitchen)"},
-         {3, "Move to Room 2 (Hallway)"},
-         {4, "Move to Room 3 (Basement)"}
-        };
-    }
+    std::map<int, std::string> getActions() const override;
+
 
     /**
      * @brief  Enables interaction with the NPC present in the room
