@@ -56,7 +56,7 @@ class RealItemRoom : public HauntedHouse {
      */
     void updateItems();
 
-   protected:
+protected:
     std::unique_ptr<Item> realItem_;
     std::vector<std::unique_ptr<Item>> fakeItems_;
 };
