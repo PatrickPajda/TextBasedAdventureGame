@@ -1,4 +1,3 @@
-
 //# include "DeathTrapRoom.hpp"
 
 //DeathTrapRoom::DeathTrapRoom() {

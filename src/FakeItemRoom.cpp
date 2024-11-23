@@ -1,7 +1,7 @@
-
 //#include "FakeItemRoom.hpp"
 
-//FakeItemRoom::FakeItemRoom(std::unique_ptr<Item> deathItem, std::unique_ptr<Item> fakeItem) {
+//FakeItemRoom::FakeItemRoom(std::unique_ptr<Item> deathItem, 
+//std::unique_ptr<Item> fakeItem) {
      // Transfer ownership of deathItem
     //items.push_back(std::move(deathItem));
     // Transfer ownership of fakeItem
@@ -13,9 +13,9 @@
 //}
 
 //void FakeItemRoom::inspectRoom(){
-    
+
 //}
 
 //void FakeItemRoom::inspectRoom(){
-    
+
 //}

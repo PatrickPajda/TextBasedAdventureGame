@@ -11,7 +11,8 @@ int main() {
     auto startRoom = std::make_unique<RoomNavigation>();
     auto room = std::make_unique<LivingRoom>();
     auto player = std::make_unique<Player>(startRoom.get());
-    auto itemInRoom = std::make_unique<Item>("Item", "It looks like an item!", true);
+    auto itemInRoom = std::make_unique<Item>
+    ("Item", "It looks like an item!", true);
 
     std::cout << "You find yourself in a Haunted House."
     << "Right now you are " << "empty room. " <<
@@ -44,12 +45,20 @@ int main() {
         }
     }
 
-    auto realItem = std::make_unique<Item>("Real Item","This is the real item!", true);
+    auto realItem = std::make_unique<Item>
+    ("Real Item","This is the real item!", 
+    true);
 
     std::vector<std::unique_ptr<Item>> fakeItems;
-    fakeItems.push_back(std::make_unique<Item>("Fake Item #1", "This is a fake item.", true));
-    fakeItems.push_back(std::make_unique<Item>("Fake Item #2", "This is a fake item.", true));
-    fakeItems.push_back(std::make_unique<Item>("Fake Item #3", "This is a fake item.", true));
+    fakeItems.push_back(std::make_unique<Item>
+    ("Fake Item #1", "This is a fake item.", 
+    true));
+    fakeItems.push_back(std::make_unique<Item>
+    ("Fake Item #2", "This is a fake item.", 
+    true));
+    fakeItems.push_back(std::make_unique<Item>
+    ("Fake Item #3", "This is a fake item.", 
+    true));
 
     RealItemRoom realItemRoom(std::move(realItem), std::move(fakeItems));
 
