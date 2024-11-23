@@ -55,7 +55,8 @@ class RealItemRoom : public HauntedHouse {
      * Function that updates the amount of items in the room.
      */
     void updateItems();
- protected:
+
+   protected:
     std::unique_ptr<Item> realItem_;
     std::vector<std::unique_ptr<Item>> fakeItems_;
 };
