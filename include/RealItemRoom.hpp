@@ -27,8 +27,14 @@ class RealItemRoom : public HauntedHouse {
      * 
      * Initializes the RealItem with a predefined description and items.
      */
-    RealItemRoom(std::unique_ptr<Item> realItem,
-    std::vector<std::unique_ptr<Item>> fakeItems);
+    RealItemRoom(Item* realItem, 
+    std::vector<Item*> fakeItems);
+     /**
+     * @brief Default destructor for the RealItemRoom class.
+     * 
+     * Default destructor
+     */
+    ~RealItemRoom() override;
 
     /**
      * @brief Describes the RealItemRoom.
@@ -47,7 +53,7 @@ class RealItemRoom : public HauntedHouse {
      * Player is given the option to pick up one of 4 items.
      * 
      */
-//void inspectRoom() override;
+    void inspectRoom() override;
 
     /**
      * @brief Update the number of items in room. 
@@ -57,8 +63,8 @@ class RealItemRoom : public HauntedHouse {
     void updateItems();
 
  protected:
-    std::unique_ptr<Item> realItem_;
-    std::vector<std::unique_ptr<Item>> fakeItems_;
+    Item* realItem_;
+    std::vector<Item*> fakeItems_;
 };
 
 #endif // REALITEMROM_HPP_INCLUDED

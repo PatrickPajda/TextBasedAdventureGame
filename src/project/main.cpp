@@ -8,11 +8,11 @@
 #include "RealItemRoom.hpp"
 
 int main() {
-    auto startRoom = std::make_unique<RoomNavigation>();
-    auto room = std::make_unique<LivingRoom>();
-    auto player = std::make_unique<Player>(startRoom.get());
-    auto itemInRoom = std::make_unique<Item>
-    ("Item", "It looks like an item!", true);
+
+    RoomNavigation* startRoom = new RoomNavigation();
+    LivingRoom* room = new LivingRoom();
+    Player* player = new Player(startRoom);
+    Item* itemInRoom = new Item("Item", "It looks like an Item!", true);
 
     std::cout << "You find yourself in a Haunted House."
     << "Right now you are " << "empty room. " <<
@@ -33,9 +33,9 @@ int main() {
         } else if (choice == "2") {
             room->describe();
         } else if (choice == "3") {
-            player->pickUp(itemInRoom.get());
+            player->pickUp(itemInRoom);
         } else if (choice == "4") {
-            player->drop(itemInRoom.get());
+            player->drop(itemInRoom);
         } else if (choice == "5") {
             std::cout << "Exiting Game. Thank-you for playing!" << std::endl;
             break;
@@ -45,26 +45,24 @@ int main() {
         }
     }
 
-    auto realItem = std::make_unique<Item>
-    ("Real Item", "This is the real item!",
-    true);
+    Item* realItem = new Item("Real Item", "This is the real item!", true);
 
-    std::vector<std::unique_ptr<Item>> fakeItems;
-    fakeItems.push_back(std::make_unique<Item>
-    ("Fake Item #1", "This is a fake item.",
-    true));
-    fakeItems.push_back(std::make_unique<Item>
-    ("Fake Item #2", "This is a fake item.",
-    true));
-    fakeItems.push_back(std::make_unique<Item>
-    ("Fake Item #3", "This is a fake item.",
-    true));
+    std::vector<Item*> fakeItems;
+    fakeItems.push_back(new Item("Fake Item #1", "This is fake item #1", true));
+    fakeItems.push_back(new Item("Fake Item #2", "This is fake item #2", true));
+    fakeItems.push_back(new Item("Fake Item #3", "This is fake item #3", true));
 
-    RealItemRoom realItemRoom(std::move(realItem), std::move(fakeItems));
+    RealItemRoom* realItemRoom = new RealItemRoom(realItem, fakeItems);
 
-    realItemRoom.describe();
+    realItemRoom->describe();
 
-    //realItemRoom.inspectRoom();
+    realItemRoom->inspectRoom();
+
+    delete realItemRoom;
+    delete itemInRoom;
+    delete player;
+    delete room;
+    delete startRoom;
 
     return 0;
 }

@@ -42,6 +42,13 @@ class LivingRoom : public HauntedHouse {
      */
     void interactWithNPC();
 
+   /**
+     * @brief  Let's you interact with Room.
+     * 
+     * Calls function to interact with Room. 
+     */
+    void inspectRoom() override;
+
  protected:
 //NPC* monster;
 bool isExit;
