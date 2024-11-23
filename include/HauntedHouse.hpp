@@ -54,14 +54,15 @@ class HauntedHouse {
         std::cout << description << std::endl;
     }
 
-   /**
-     * @brief virtual function for outputing the options for the room
-     *
-     * Return available actions as a map
-     * (e.g., 1 -> "Talk to NPC", 2 -> "Move to Room 1")
+    /**
+     * @brief Player inspects the room 
+     * 
+     * Overrides the inspectRoom() function from HauntedHouse to give options 
+     * for what to do in a specific to the FakeItem room.
+     * Player is given the option to pick up one of two items.
+     * 
      */
-
-    virtual std::map<int, std::string> getActions() const = 0;
+    void inspectRoom() override;
 };
 
 #endif // HAUNTEDHOUSE_HPP_INCLUDED
