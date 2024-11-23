@@ -37,7 +37,7 @@ class HauntedHouse {
      * 
      * Function allows you interact with the items in the room.
      */
-    virtual void inspect() = 0;
+    //virtual void inspectRoom() = 0;
 
  protected:
     /**

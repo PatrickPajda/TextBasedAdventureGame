@@ -36,9 +36,7 @@ class RealItemRoom : public HauntedHouse {
      * specific to the room 
      * Provides a description of the storage room containing two items and exit options.
      */
-    void RealItemRoom::describe() override {
-      std::cout << "This is the Real Item Room." << description << std::endl;
-    }
+    void describe() override;
 
     /**
      * @brief Player inspects the room 
