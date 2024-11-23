@@ -47,7 +47,7 @@ int main() {
 
     auto realItem = std::make_unique<Item>
     ("Real Item","This is the real item!",
-    true);
+     true);
 
     std::vector<std::unique_ptr<Item>> fakeItems;
     fakeItems.push_back(std::make_unique<Item>

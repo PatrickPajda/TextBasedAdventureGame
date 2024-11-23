@@ -13,8 +13,7 @@ fakeItems_(std::move(fakeItems)) {
 //}
 void RealItemRoom::describe() {
     std::cout << "This is the Real Item Room." << std::endl;
-
 }
 //void RealItemRoom::inspectRoom(){
-    
+
 //}
