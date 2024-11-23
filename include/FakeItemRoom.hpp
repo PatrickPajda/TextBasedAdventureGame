@@ -19,13 +19,13 @@
  * for the DeathTrap room. It overrides the describe() method to give a description of the room.
  */
 //class FakeItemRoom : public HauntedHouse {
- //public:
+//public:
     /**
      * @brief Default constructor for the FakeItemRoom class.
      * 
      * Initializes the FakeItem with a predefined description and room items.
      */
-    //FakeItemRoom(std::unique_ptr<Item> 
+    //FakeItemRoom(std::unique_ptr<Item>
     //deathItem, std::unique_ptr<Item> fakeItem);
 
     /**
@@ -52,7 +52,7 @@
      * function that kills the player by outputing a death message and then we can call the game end contition
      */
 //void updateItems()
- //protected:
+//protected:
     //std::vector<std::unique_ptr<Item>> items;
 
 //};

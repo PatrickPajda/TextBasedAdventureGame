@@ -27,7 +27,7 @@ class RealItemRoom : public HauntedHouse {
      * 
      * Initializes the RealItem with a predefined description and items.
      */
-    RealItemRoom(std::unique_ptr<Item> realItem, 
+    RealItemRoom(std::unique_ptr<Item> realItem,
     std::vector<std::unique_ptr<Item>> fakeItems);
 
     /**

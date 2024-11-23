@@ -18,7 +18,7 @@
  * for the DeathTrap room. It overrides the describe() method to give a description of the room.
  */
 //class DeathTrapRoom : public HauntedHouse {
- //public:
+//public:
     /**
      * @brief Default constructor for the DeathTrapRoom class.
      * 

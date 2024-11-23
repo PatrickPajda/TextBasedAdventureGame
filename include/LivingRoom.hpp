@@ -43,9 +43,8 @@ class LivingRoom : public HauntedHouse {
     void interactWithNPC();
 
  protected:
- //NPC* monster;
- bool isExit;
-
+//NPC* monster;
+bool isExit;
 };
 
 #endif // LIVINGROOM_HPP_INCLUDED

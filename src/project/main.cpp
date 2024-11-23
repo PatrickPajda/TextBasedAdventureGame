@@ -46,18 +46,18 @@ int main() {
     }
 
     auto realItem = std::make_unique<Item>
-    ("Real Item","This is the real item!", 
+    ("Real Item","This is the real item!",
     true);
 
     std::vector<std::unique_ptr<Item>> fakeItems;
     fakeItems.push_back(std::make_unique<Item>
-    ("Fake Item #1", "This is a fake item.", 
+    ("Fake Item #1", "This is a fake item.",
     true));
     fakeItems.push_back(std::make_unique<Item>
-    ("Fake Item #2", "This is a fake item.", 
+    ("Fake Item #2", "This is a fake item.",
     true));
     fakeItems.push_back(std::make_unique<Item>
-    ("Fake Item #3", "This is a fake item.", 
+    ("Fake Item #3", "This is a fake item.",
     true));
 
     RealItemRoom realItemRoom(std::move(realItem), std::move(fakeItems));
