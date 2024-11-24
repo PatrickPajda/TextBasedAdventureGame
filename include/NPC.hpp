@@ -3,25 +3,43 @@
  * @date 2024-11
  */
 
-//#ifndef NPC_HPP
-//#define NPC_HPP
+#ifndef NPC_HPP
+#define NPC_HPP
 
-//#include <string>
-//#include "Item.hpp"
+#include <string>
+#include <iostream>
 
-//class NPC {
-//protected:
-    //std::string name;
-    //std::string dialogue;
-    //Item* requiredItem;
+/**
+ * @class NPC
+ * @brief Abstract base class for all npcs.
+ */
+class NPC {
+protected:
+    std::string name;       // Name of the NPC
+    std::string greeting;   // Greeting message
 
-//public:
-    //NPC(const std::string& npcName, const
-    //std::string& npcDialogue, Item* item);
-    //virtual ~NPC();
+public:
+    /**
+     * @brief Constructor for Monster.
+     * @param npcName The name of the monster.
+     * @param npcGreeting The greeting message of the monster.
+     */
+    NPC(const std::string& npcName, const std::string& npcGreeting)
+        : name(npcName), greeting(npcGreeting) {}
 
-    //virtual void interact() const;
-    //virtual bool evaluateItem(Item* playerItem) const;
-//};
+    /**
+     * @brief Virtual destructor.
+     */
+    virtual ~NPC() = default;
 
-//#endif // NPC_HPP_INCLUDED
+    /**
+     * @brief Greet the player.
+     * Prints the monster's greeting message.
+     */
+    virtual void greet() const {
+        std::cout << greeting << std::endl;
+    }
+
+};
+
+#endif // NPC_HPP

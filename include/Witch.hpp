@@ -1,18 +1,21 @@
+#ifndef WITCH_HPP
+#define WITCH_HPP
+
+#include "NPC.hpp"
+
 /**
- * @author John Uzoka [john.uzoka@uleth.ca]
- * @date 2024-11
+ * @class Witch
+ * @brief A derived class representing a witch monster.
  */
+class Witch : public NPC {
+public:
+    /**
+     * @brief Constructor for Skeleton.
+     */
+    Witch();
 
-//#ifndef WITCH_HPP
-//#define WITCH_HPP
+    void greet() const override;
 
-//#include "NPC.hpp"
+};
 
-//class Witch : public NPC {
-//public:
-    //Witch(Item* item);
-    //void interact() const override;
-    //void trick() const override;
-//};
-
-//#endif // WITCH_HPP_INCLUDED
+#endif // WITCH_HPP

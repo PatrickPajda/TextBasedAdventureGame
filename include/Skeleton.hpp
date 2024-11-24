@@ -1,18 +1,21 @@
+#ifndef SKELETON_HPP
+#define SKELETON_HPP
+
+#include "NPC.hpp"
+
 /**
- * @author John Uzoka [john.uzoka@uleth.ca]
- * @date 2024-11
+ * @class Skeleton
+ * @brief A derived class representing a skeleton monster.
  */
+class Skeleton : public NPC {
+public:
+    /**
+     * @brief Constructor for Skeleton.
+     */
+    Skeleton();
 
-//#ifndef SKELETON_HPP
-//#define SKELETON_HPP
+    void greet() const override;
 
-//#include "NPC.hpp"
+};
 
-//class Skeleton : public NPC {
-//public:
-    //Skeleton(Item* item);
-    //void interact() const override;
-    //bool dance() const override;
-//};
-
-//#endif // SKELETON_HPP_INCLUDED
+#endif // SKELETON_HPP

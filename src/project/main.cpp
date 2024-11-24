@@ -6,6 +6,9 @@
 #include "Player.hpp"
 #include "Item.hpp"
 #include "RealItemRoom.hpp"
+#include "Ghost.hpp"
+#include "Skeleton.hpp"
+#include "Witch.hpp"
 
 int main() {
 
@@ -13,6 +16,13 @@ int main() {
     LivingRoom* room = new LivingRoom();
     Player* player = new Player(startRoom);
     Item* itemInRoom = new Item("Item", "It looks like an Item!", true);
+    Ghost ghost;
+    Skeleton skeleton;
+    Witch witch;
+
+    ghost.greet();
+    skeleton.greet();
+    witch.greet();
 
     std::cout << "You find yourself in a Haunted House."
     << "Right now you are " << "empty room. " <<
@@ -45,6 +55,8 @@ int main() {
         }
     }
 
+    
+
    // Item* realItem = new Item("Real Item", "This is the real item!", true);
 
     //std::vector<Item*> fakeItems;
@@ -59,6 +71,8 @@ int main() {
    // realItemRoom->inspectRoom();
 
    // delete realItemRoom;
+
+
     delete itemInRoom;
     delete player;
     delete room;
