@@ -1,9 +1,4 @@
 /**
- * @author Patrick Pajda, John Uzoka [john.uzoka@uleth.ca]
- * @date 2024-11, 2024-11
- */
-
-/**
  * @file HauntedHouse.hpp
  * @brief Defines the abstract base class for different environments in a haunted house adventure game.
  */
