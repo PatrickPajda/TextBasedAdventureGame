@@ -59,3 +59,20 @@ class LivingRoom : public HauntedHouse {
 };
 
 #endif // LIVINGROOM_HPP_INCLUDED
+
+#include "Room.hpp"
+
+class LivingRoom : public Room {
+public:
+    LivingRoom() : Room("You are in the living room. It looks spooky.") {}
+
+    // Provide actions for the LivingRoom
+    std::map<int, std::string> getActions() const override {
+        return {
+            {1, "Talk to the NPC"},
+            {2, "Move to Room 1 (Kitchen)"},
+            {3, "Move to Room 2 (Hallway)"},
+            {4, "Move to Room 3 (Basement)"}
+        };
+    }
+};
