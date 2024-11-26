@@ -7,7 +7,9 @@
 //#include <iostream>
 
 //Ghost::Ghost(Item* item)
-    //: NPC("Ghost", "Oooo... Only the mystical candle can ease my suffering...", item) {}
+    //: NPC("Ghost", "Oooo... Only the 
+    //mystical candle can ease 
+    //my suffering...", item) {}
 
 //void Ghost::interact() const {
     //std::cout << "A cold chill fills the room. " << name << " whispers: " << dialogue << std::endl;

@@ -20,13 +20,15 @@
  * for the DeathTrap room. It overrides the describe() method to give a description of the room.
  */
 //class RealItemRoom : public HauntedHouse {
- //public:
+//public:
     /**
      * @brief Default constructor for the RealItemRoom class.
      * 
      * Initializes the RealItem with a predefined description and items.
      */
-    //RealItemRoom(std::unique_ptr<Item> realItem, std::unique_ptr<Item> fakeItem);
+    //RealItemRoom(std::unique_ptr<Item> 
+    //realItem, std::unique_ptr<Item> 
+    //fakeItem);
 
     /**
      * @brief Describes the RealItemRoom.
@@ -51,7 +53,7 @@
      * @brief Causes the player to fall into a trap, resulting in death. 
      * 
      * function that kills the player by outputing a death message and then we can call the game end contition
-     */
+*/
     //void updateItems()
  //protected:
     //std::vector<std::unique_ptr<Item>> items;

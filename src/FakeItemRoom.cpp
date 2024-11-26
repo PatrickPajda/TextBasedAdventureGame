@@ -17,5 +17,5 @@
 //}
 
 //void FakeItemRoom::inspectRoom(){
-    
+
 //}

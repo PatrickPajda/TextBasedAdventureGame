@@ -41,11 +41,10 @@ class LivingRoom : public HauntedHouse {
      * Calls NPCs interactiion from refrence 
      */
     void interactWithNPC();
-    
- protected:
- //NPC* monster;
- bool isExit;
 
+ protected:
+//NPC* monster;
+ bool isExit;
 
 };
 
