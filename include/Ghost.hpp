@@ -16,6 +16,8 @@ public:
 
     void greet() const override;
 
+    bool checkItem() override;
+
 };
 
 #endif // GHOST_HPP

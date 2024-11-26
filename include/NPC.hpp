@@ -8,6 +8,7 @@
 
 #include <string>
 #include <iostream>
+#include "Item.hpp"
 
 /**
  * @class NPC
@@ -17,6 +18,7 @@ class NPC {
 protected:
     std::string name;       // Name of the NPC
     std::string greeting;   // Greeting message
+    Item* realItem; // Pointer to Item Object called realItem
 
 public:
     /**
@@ -36,9 +38,15 @@ public:
      * @brief Greet the player.
      * Prints the monster's greeting message.
      */
-    virtual void greet() const {
-        std::cout << greeting << std::endl;
+    virtual void greet() const = 0; {
     }
+
+    /**
+     * @brief checkItem function
+     * Checks if the Item the Player has is
+     * the correct item to pass to the next level.
+     */
+    virtual void checkItem(Item* playerItem) const = 0;
 
 };
 
