@@ -25,7 +25,7 @@
      * 
      * Initializes the FakeItem with a predefined description and room items.
      */
-    //FakeItemRoom(std::unique_ptr<Item> 
+    //FakeItemRoom(std::unique_ptr<Item>
     //deathItem, std::unique_ptr<Item> fakeItem);
 
     /**

@@ -7,13 +7,13 @@
 //#include <iostream>
 
 //Witch::Witch(Item* item)
-    //: NPC("Witch", "Hehehe... I've been 
-    //expecting you! Do you have the 
+    //: NPC("Witch", "Hehehe... I've been
+    //expecting you! Do you have the
     //enchanted herb?", item) {}
 
 //void Witch::interact() const {
-    //std::cout << "A cackling voice 
-    //echoes... " << name << " says: " << 
+    //std::cout << "A cackling voice
+    //echoes... " << name << " says: " <<
     //dialogue << std::endl;
 ///}
 

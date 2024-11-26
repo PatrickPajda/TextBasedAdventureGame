@@ -44,8 +44,7 @@ class LivingRoom : public HauntedHouse {
 
  protected:
 //NPC* monster;
- bool isExit;
-
+bool isExit;
 };
 
 #endif // LIVINGROOM_HPP_INCLUDED

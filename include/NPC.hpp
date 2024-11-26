@@ -16,8 +16,8 @@
     //Item* requiredItem;
 
 //public:
-    //NPC(const std::string& npcName, 
-    //const std::string& npcDialogue, 
+    //NPC(const std::string& npcName,
+    //const std::string& npcDialogue,
     //Item* item);
     //virtual ~NPC();
 

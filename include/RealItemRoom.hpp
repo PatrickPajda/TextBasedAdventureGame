@@ -26,8 +26,8 @@
      * 
      * Initializes the RealItem with a predefined description and items.
      */
-    //RealItemRoom(std::unique_ptr<Item> 
-    //realItem, std::unique_ptr<Item> 
+    //RealItemRoom(std::unique_ptr<Item>
+    //realItem, std::unique_ptr<Item>
     //fakeItem);
 
     /**
@@ -55,7 +55,7 @@
      * function that kills the player by outputing a death message and then we can call the game end contition
 */
     //void updateItems()
- //protected:
+//protected:
     //std::vector<std::unique_ptr<Item>> items;
 //};
 
