@@ -27,7 +27,6 @@ int main() {
 
         if (choice == "1") {
             player->move();
-            break;
         } else if (choice == "2") {
             room->describe();
         } else if (choice == "3") {
