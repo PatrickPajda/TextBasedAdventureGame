@@ -15,7 +15,7 @@
     //std::cout << "A cackling voice 
     //echoes... " << name << " says: " << 
     //dialogue << std::endl;
-//}
+///}
 
 //void Witch::Trick() const {
 //}
