@@ -16,13 +16,14 @@ int main() {
     LivingRoom* room = new LivingRoom();
     Player* player = new Player(startRoom);
     Item* itemInRoom = new Item("Item", "It looks like an Item!", true);
-    NPC* ghost = new Ghost();
-    NPC* skeleton = new Skeleton();
-    NPC* witch = new Witch();
+    Item* key;
+    Ghost* ghost = new Ghost(key);
+   // NPC* skeleton = new Skeleton();
+    //NPC* witch = new Witch();
 
     ghost->greet();
-    skeleton->greet();
-    witch->greet();
+    //skeleton->greet();
+    //witch->greet();
 
 
     std::cout << "You find yourself in a Haunted House."
@@ -79,8 +80,8 @@ int main() {
     delete room;
     delete startRoom;
     delete ghost;
-    delete skeleton;
-    delete witch;
+    //delete skeleton;
+    //delete witch;
 
     return 0;
 }

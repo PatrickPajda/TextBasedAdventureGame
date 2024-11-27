@@ -1,21 +1,28 @@
-#ifndef WITCH_HPP
-#define WITCH_HPP
+//#ifndef WITCH_HPP
+//#define WITCH_HPP
 
-#include "NPC.hpp"
+//#include "NPC.hpp"
 
 /**
  * @class Witch
  * @brief A derived class representing a witch monster.
  */
-class Witch : public NPC {
-public:
+//class Witch : public NPC {
+//public:
     /**
      * @brief Constructor for Skeleton.
      */
-    Witch();
+//    Witch();
 
-    void greet() const override;
+//    void greet() const override;
 
-};
+//    bool checkItem(Item* playerItem) const override;
 
-#endif // WITCH_HPP
+//    bool getisSolved() const {return isSolved;}
+
+//    void setIsSolved(bool solved) {isSolved = solved;}
+
+//    virtual void giveHint() const override;
+//};
+
+//#endif // WITCH_HPP

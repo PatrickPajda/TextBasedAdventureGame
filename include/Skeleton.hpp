@@ -1,21 +1,29 @@
-#ifndef SKELETON_HPP
-#define SKELETON_HPP
+//#ifndef SKELETON_HPP
+//#define SKELETON_HPP
 
-#include "NPC.hpp"
+//#include "NPC.hpp"
 
 /**
  * @class Skeleton
  * @brief A derived class representing a skeleton monster.
  */
-class Skeleton : public NPC {
-public:
+//class Skeleton : public NPC {
+//public:
     /**
      * @brief Constructor for Skeleton.
      */
-    Skeleton();
+//    Skeleton();
 
-    void greet() const override;
+//    void greet() const override;
 
-};
+//    bool checkItem(Item* playerItem) const override;
 
-#endif // SKELETON_HPP
+//    bool getisSolved() const {return isSolved;}
+
+//    void setIsSolved(bool solved) {isSolved = solved;}
+
+//    virtual void giveHint() const override;
+
+//};
+
+//#endif // SKELETON_HPP

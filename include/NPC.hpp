@@ -16,9 +16,11 @@
  */
 class NPC {
 protected:
-    std::string name;       // Name of the NPC
-    std::string greeting;   // Greeting message
-    Item* realItem; // Pointer to Item Object called realItem
+    std::string name;
+    std::string greeting;
+    Item* requiredItem;
+    bool isSolved;
+
 
 public:
     /**
@@ -26,8 +28,8 @@ public:
      * @param npcName The name of the monster.
      * @param npcGreeting The greeting message of the monster.
      */
-    NPC(const std::string& npcName, const std::string& npcGreeting)
-        : name(npcName), greeting(npcGreeting) {}
+    NPC(const std::string& npcName, const std::string& npcGreeting, Item* item)
+        : name(npcName), greeting(npcGreeting), requiredItem(item), isSolved(false) {}
 
     /**
      * @brief Virtual destructor.
@@ -38,15 +40,20 @@ public:
      * @brief Greet the player.
      * Prints the monster's greeting message.
      */
-    virtual void greet() const = 0; {
-    }
+    virtual void greet() const = 0;
 
     /**
      * @brief checkItem function
      * Checks if the Item the Player has is
      * the correct item to pass to the next level.
      */
-    virtual void checkItem(Item* playerItem) const = 0;
+    virtual bool checkItem(Item* playerItem) const = 0;
+
+    bool getIsSolved() const {return isSolved;}
+
+    void setIsSolved(bool solved) {isSolved = solved;}
+
+    virtual void giveHint() const = 0;
 
 };
 

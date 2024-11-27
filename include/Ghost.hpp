@@ -12,11 +12,13 @@ public:
     /**
      * @brief Constructor for Ghost.
      */
-    Ghost();
+    Ghost(Item* item);
 
     void greet() const override;
 
-    bool checkItem() override;
+    bool checkItem(Item* playerItem) const override;
+
+    void giveHint() const override;
 
 };
 
