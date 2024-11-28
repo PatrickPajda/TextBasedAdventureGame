@@ -1,25 +1,42 @@
-
 #include "RealItemRoom.hpp"
 
-RealItemRoom::RealItemRoom(std::unique_ptr<Item> realItem, std::unique_ptr<Item> fakeItem) {
-    // Transfer ownership of realItem
-    items.push_back(std::move(realItem));
-    // Transfer ownership of fakeItem
-    items.push_back(std::move(fakeItem));
+RealItemRoom::RealItemRoom()
+    : HauntedHouse("You are in the Real Item Room. It contains two mysterious items.") {}
+
+std::map<int, std::string> RealItemRoom::getActions() const {
+    return {
+        {1, "Pick up the glowing bone (real item)."},
+        {2, "Pick up the dull rock (fake item)."},
+        {3, "Return to the Living Room."}
+    };
 }
 
-RealItemRoom::~RealItemRoom(){
-
+std::string RealItemRoom::getRoomType() const {
+    return "RealItemRoom";
 }
 
-void RealItemRoom::describe(){
+// void RealItemRoom::setRealItem(RealItem* _realItem){
+//     if (realItem != nullptr){
+//         realItem = _realItem;
 
-}
+//     }
 
-void RealItemRoom::inspectRoom(){
-    
-}
+// }
 
-void RealItemRoom::inspectRoom(){
-    
-}
+// void RealItemRoom::setFakeItem(FakeItem* _fakeItem){
+//     if (fakeItem != nullptr){
+//         fakeItem = _fakeItem;
+//     }
+// }
+
+// RealItem* RealItemRoom::getRealItem(){
+//     if (RealItem != nullptr){
+//         return realItem;
+//     }
+// }
+
+// FakeItem* RealItemRoom::getFakeItem(){
+//     if (fakeItem != nullptr){
+//         return fakeItem;
+//     }
+// }

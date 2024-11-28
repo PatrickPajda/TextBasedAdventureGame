@@ -1,60 +1,59 @@
-/**
- * @file RealItemRoom.hpp
- * @brief Defines the RealItemRoom class, a specific type of room in the haunted house adventure game.
- */
+#ifndef REALITEMROOM_HPP
+#define REALITEMROOM_HPP
 
-#ifndef REALITEMROM_HPP_INCLUDED
-#define REALITEMROM_HPP_INCLUDED
-
-#include <iostream>
-#include <string>
-#include <vector>
-#include <memory>
 #include "HauntedHouse.hpp"
 
 /**
  * @class RealItemRoom
- * @brief Represents the RealItemRoom in the haunted house.
- * 
- * This class inherits from HauntedHouse and provides a specific implementation
- * for the DeathTrap room. It overrides the describe() method to give a description of the room.
+ * @brief A room containing one real item and one fake item.
+ *
+ * The RealItemRoom presents the player with two items, one of which is real.
  */
 class RealItemRoom : public HauntedHouse {
- public:
+public:
     /**
-     * @brief Default constructor for the RealItemRoom class.
-     * 
-     * Initializes the RealItem with a predefined description and items.
+     * @brief Constructs a RealItemRoom object with a predefined description.
      */
-    RealItemRoom(std::unique_ptr<Item> realItem, std::unique_ptr<Item> fakeItem);
+    RealItemRoom();
 
     /**
-     * @brief Describes the RealItemRoom.
-     * 
-     * Overrides the describe() function from HauntedHouse to print out a description
-     * specific to the room 
-     * Provides a description of the storage room containing two items and exit options.
+     * @brief Get a map of actions available in the room.
+     * @return A map of action keys to action descriptions.
      */
-    void describe() override;
+    std::map<int, std::string> getActions() const override;
 
     /**
-     * @brief Player inspects the room 
-     * 
-     * Overrides the inspectRoom() function from HauntedHouse to give options 
-     * for what to do in a specific to the RealItem room.
-     * Player is given the option to pick up one of two items.
-     * 
+     * @brief Get the unique identifier for the room type.
+     * @return A string representing the room type.
      */
-    void inspectRoom() override;
+    std::string getRoomType() const override;
+
+        /**
+     * @brief set the pointer for the real item.
+     */
+    void setRealItem(RealItem* realItem);
 
     /**
-     * @brief Causes the player to fall into a trap, resulting in death. 
-     * 
-     * function that kills the player by outputing a death message and then we can call the game end contition
+     * @brief set the pointer for the fake item.
      */
-    void updateItems()
+    void setFakeItem(FakeItem* fakeItem);
+
+    /**
+     * @brief Get the pointer of the real item
+     * @return A pointer of type RealItem
+     */
+    RealItem* getRealItem();
+
+    /**
+     * @brief Get the pointer of the fake item
+     * @return A pointer of type FakeItem
+     */
+    FakeItem* getFakeItem();
+
  private:
-    std::vector<std::unique_ptr<Item>> items;
+    std::string livingRoomName;
+    //FakeItem* fakeItem;
+    //RealItem* realItem;
 };
 
-#endif // REALITEMROM_HPP_INCLUDED
+#endif // REALITEMROOM_HPP

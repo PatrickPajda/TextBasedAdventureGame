@@ -1,55 +1,36 @@
-/**
- * @file DeathTrapRoom.hpp
- * @brief Defines the DeathTrapRoom class, a specific type of room in the haunted house adventure game.
- */
+#ifndef DEATHTRAPROOM_HPP
+#define DEATHTRAPROOM_HPP
 
-#ifndef DEATHTRAPROOM_HPP_INCLUDED
-#define DEATHTRAPROOM_HPP_INCLUDED
-
-#include <iostream>
-#include <string>
 #include "HauntedHouse.hpp"
 
 /**
- * @class LivingRoom
- * @brief Represents the DeathTrapRoom in the haunted house.
- * 
- * This class inherits from HauntedHouse and provides a specific implementation
- * for the DeathTrap room. It overrides the describe() method to give a description of the room.
+ * @class DeathTrapRoom
+ * @brief A room with a deadly trap.
+ *
+ * The DeathTrapRoom presents the player with a potentially fatal choice.
  */
 class DeathTrapRoom : public HauntedHouse {
- public:
+public:
     /**
-     * @brief Default constructor for the DeathTrapRoom class.
-     * 
-     * Initializes the DeathTrapRoom with a predefined description.
+     * @brief Constructs a DeathTrapRoom object with a predefined description.
      */
     DeathTrapRoom();
 
     /**
-     * @brief Describes the DeathTrapRoom.
-     * 
-     * Overrides the describe() function from HauntedHouse to print out a description
-     * specific to the DeathTrap room.
-     * Describes the trap room with a trap and exit options.
+     * @brief Get a map of actions available in the room.
+     * @return A map of action keys to action descriptions.
      */
-    void describe() override;
+    std::map<int, std::string> getActions() const override;
 
     /**
-     * @brief Player inspects the room 
-     * 
-     * Overrides the inspectRoom() function from HauntedHouse to give options 
-     * Player inspects the room and can approach a trap or return to the previous room. 
+     * @brief Get the unique identifier for the room type.
+     * @return A string representing the room type.
      */
-    void inspectRoom() override;
+    std::string getRoomType() const override;
 
-
-    /**
-     * @brief Causes the player to fall into a trap, resulting in death. 
-     * 
-     * function that kills the player by outputing a death message and then we can call the game end contition
-     */
-    void killPlayer()
+ private:
+    std::string livingRoomName;
+    std::string trapDescription;
 };
 
-#endif // DEATHTRAPROOM_HPP_INCLUDED
+#endif // DEATHTRAPROOM_HPP

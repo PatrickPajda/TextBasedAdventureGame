@@ -1,20 +1,15 @@
+#include "DeathTrapRoom.hpp"
 
-# include "DeathTrapRoom.hpp"
+DeathTrapRoom::DeathTrapRoom()
+    : HauntedHouse("You are in the Death Trap Room. Danger is everywhere.") {}
 
-DeathTrapRoom::DeathTrapRoom() {
-
+std::map<int, std::string> DeathTrapRoom::getActions() const {
+    return {
+        {1, "Approach the glowing trap (dangerous!)."},
+        {2, "Return to the Living Room."}
+    };
 }
 
-void DeathTrapRoom::describe(){
-
+std::string DeathTrapRoom::getRoomType() const {
+    return "DeathTrapRoom";
 }
-
-void DeathTrapRoom::inspectRoom(){
-
-}
-
-void DeathTrapRoom::killPlayer(){
-
-}
-
-
