@@ -5,13 +5,14 @@ GardenLevel::GardenLevel() {
 }
 
 void GardenLevel::setupLevel() {
+    // Define room order
+    roomOrder = {
+        &gazebo,
+        &toolShed,
+        &rosePit,
+        &flowerField
+    };
+
     // Start in the Living Room
     setCurrentRoom(&gazebo);
-
-    // Set room connections
-    setupRoomConnections({
-        {2, &realItemRoom},
-        {3, &fakeItemRoom},
-        {4, &deathTrapRoom}
-    });
 }

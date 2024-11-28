@@ -9,21 +9,20 @@
 
 /**
  * @class GardenLevel
- * @brief Represents the garden level of the haunted house.
+ * @brief A level where the player explores a garden area.
  *
- * The GardenLevel organizes rooms specific to the garden scenario
- * and sets up the transitions between them.
+ * The GardenLevel defines a custom order of rooms and sets up their transitions.
  */
 class GardenLevel : public Level {
 private:
-    LivingRoom gzebo;     ///< Central hub of the level.
-    RealItemRoom shed; ///< Room containing real and fake items.
-    FakeItemRoom rosePit; ///< Room containing fake and deadly items.
-    DeathTrapRoom flowerField; ///< Room with a deadly trap.
+    LivingRoom gazebo;
+    RealItemRoom toolShed;
+    FakeItemRoom rosePit;
+    DeathTrapRoom flowerField;
 
 public:
     /**
-     * @brief Constructs a GardenLevel object and sets up the room layout.
+     * @brief Constructs a GardenLevel and sets up the room layout.
      */
     GardenLevel();
 
