@@ -16,6 +16,7 @@ class Level {
 protected:
     std::vector<HauntedHouse*> roomOrder; ///< Ordered list of rooms in the level.
     HauntedHouse* currentRoom;            ///< Pointer to the current room.
+//  Player* player;
 
 public:
     /**
@@ -55,6 +56,11 @@ public:
      * @brief Displays the available actions in the current room.
      */
     void showActions() const;
+
+    /**
+     * @brief pure virtual function that Handles transition effects between rooms.
+     */
+    virtual void roomTransition() = 0;
 
     /**
      * @brief Handles player input and transitions to the next room or performs an action.

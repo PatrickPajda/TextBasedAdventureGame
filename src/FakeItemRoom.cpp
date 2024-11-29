@@ -1,13 +1,20 @@
 #include "FakeItemRoom.hpp"
 
-FakeItemRoom::FakeItemRoom()
-    : HauntedHouse("You are in the Fake Item Room. It contains ominous items.") {}
+FakeItemRoom::FakeItemRoom(std::string description, std::string fakeItemName, std::string deathItemName)
+    : HauntedHouse(description),
+      fakeItem(new FakeItem(fakeItemName)),
+      deathItem(new DeathItem(deathItemName)) {}
+
+FakeItemRoom::~FakeItemRoom() {
+    delete fakeItem;
+    delete deathItem;
+}
 
 std::map<int, std::string> FakeItemRoom::getActions() const {
     return {
-        {1, "Pick up the cracked vase (fake item)."},
-        {2, "Pick up the cursed dagger (death item)."},
-        {3, "Return to the Living Room."}
+        {1, "Pick up the " + fakeItem->getName()},
+        {2, "Pick up the " + deathItem->getName()},
+        {3, "Go back."}
     };
 }
 

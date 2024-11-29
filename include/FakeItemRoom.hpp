@@ -12,9 +12,17 @@
 class FakeItemRoom : public HauntedHouse {
 public:
     /**
-     * @brief Constructs a FakeItemRoom object with a predefined description.
+     * @brief Constructs a FakeItemRoom with specific items.
+     * @param description Description of the room.
+     * @param fakeItemName Name of the fake item.
+     * @param deathItemName Name of the death item.
      */
-    FakeItemRoom();
+    FakeItemRoom(std::string description, std::string fakeItemName, std::string deathItemName);
+
+    /**
+     * @brief Destructor for FakeItemRoom.
+     */
+    ~FakeItemRoom();
 
     /**
      * @brief Get a map of actions available in the room.

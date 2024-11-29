@@ -1,15 +1,23 @@
 #include "RealItemRoom.hpp"
 
-RealItemRoom::RealItemRoom()
-    : HauntedHouse("You are in the Real Item Room. It contains two mysterious items.") {}
+RealItemRoom::RealItemRoom(std::string description, std::string fakeItemName, std::string realItemName)
+    : HauntedHouse(description),
+      fakeItem(new FakeItem(fakeItemName)),
+      realItem(new RealItem(realItemName)) {}
+
+RealItemRoom::~RealItemRoom() {
+    delete fakeItem;
+    delete realItem;
+}
 
 std::map<int, std::string> RealItemRoom::getActions() const {
     return {
-        {1, "Pick up the glowing bone (real item)."},
-        {2, "Pick up the dull rock (fake item)."},
-        {3, "Return to the Living Room."}
+        {1, "Pick up the " + fakeItem->getName()},
+        {2, "Pick up the " + realItem->getName()},
+        {3, "Go back."}
     };
 }
+
 
 std::string RealItemRoom::getRoomType() const {
     return "RealItemRoom";
