@@ -41,3 +41,10 @@ we plan to design and implement classes and features:
 3. FakeItemRoom class: contains fake and death items. Giving a fake item to the NPC will cause damage and giving fake item to NPC more than 2 times results in death. Picking up or interacting with a death item results in instant death.
 4. DeathRoom class: Entering this room or interacting with Certain objects inside results in instant death.
 We also outlined the structure of game levels: Level 1: Main Floor, Level 2: Basement, Level 3: Garden.
+
+3 of December |
+
+John: Environment and Level classes.
+Patrick: NPC class.
+Naomi: Player class.
+Anita: Item class.
