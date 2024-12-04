@@ -48,3 +48,18 @@ John: Environment and Level classes.
 Patrick: NPC class.
 Naomi: Player class.
 Anita: Item class.
+
+4 of December |
+
+NPCs: monsters(Skeleton, Mummy, Zombie)
+Environments: LivingRoom, Basement, Garden (as levels) and RealItemRoom, FakeItemRoom, DeathRoom(Death trap)
+Usable Items: Real items, Fake items, Death items
+Puzzles: Real item, Fake item, Death item
+How to loss the game:
+1. Player enters to the DeathRoom and dies.
+2. Player pick up the fake item and give it to the NPC and get damage, after geting damage 3 time player dies.
+3. Player pick up the death item and give it to the NPC and dies.
+Players actions: 
+1. Enteract with NPCs.
+2. Moving between rooms.
+3. Pick up or drop an item.
