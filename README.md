@@ -44,10 +44,10 @@ We also outlined the structure of game levels: Level 1: Main Floor, Level 2: Bas
 
 3 of December |
 
-John: Environment and Level classes.
-Patrick: NPC class.
-Naomi: Player class.
-Anita: Item class.
+* John: Environment and Level classes.
+* Patrick: NPC class.
+* Naomi: Player class.
+* Anita: Item class.
 
 4 of December |
 
