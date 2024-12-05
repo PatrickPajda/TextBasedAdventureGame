@@ -1,3 +1,8 @@
+/**
+ * @author John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-12
+ */
+
 #ifndef HAUNTEDHOUSE_HPP
 #define HAUNTEDHOUSE_HPP
 

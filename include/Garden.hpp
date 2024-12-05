@@ -1,3 +1,9 @@
+/**
+ * @author John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-12
+ */
+
+
 #ifndef GARDENLEVEL_HPP
 #define GARDENLEVEL_HPP
 

@@ -1,14 +1,15 @@
+/**
+ * @author John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-12
+ */
+
 #include "RealItemRoom.hpp"
+#include <memory>
 
 RealItemRoom::RealItemRoom(std::string description, std::string fakeItemName, std::string realItemName)
     : HauntedHouse(description),
-      fakeItem(new FakeItem(fakeItemName)),
-      realItem(new RealItem(realItemName)) {}
-
-RealItemRoom::~RealItemRoom() {
-    delete fakeItem;
-    delete realItem;
-}
+      fakeItem(std::make_unique<FakeItem>(fakeItemName)),
+      realItem(std::make_unique<RealItem>(realItemName)) {}
 
 std::map<int, std::string> RealItemRoom::getActions() const {
     return {
@@ -18,33 +19,14 @@ std::map<int, std::string> RealItemRoom::getActions() const {
     };
 }
 
-
 std::string RealItemRoom::getRoomType() const {
     return "RealItemRoom";
 }
 
-// void RealItemRoom::setRealItem(RealItem* _realItem){
-//     if (realItem != nullptr){
-//         realItem = _realItem;
+FakeItem* RealItemRoom::getFakeItem() {
+    return fakeItem.get();
+}
 
-//     }
-
-// }
-
-// void RealItemRoom::setFakeItem(FakeItem* _fakeItem){
-//     if (fakeItem != nullptr){
-//         fakeItem = _fakeItem;
-//     }
-// }
-
-// RealItem* RealItemRoom::getRealItem(){
-//     if (RealItem != nullptr){
-//         return realItem;
-//     }
-// }
-
-// FakeItem* RealItemRoom::getFakeItem(){
-//     if (fakeItem != nullptr){
-//         return fakeItem;
-//     }
-// }
+RealItem* RealItemRoom::getRealItem() {
+    return realItem.get();
+}

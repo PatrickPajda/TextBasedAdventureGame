@@ -1,22 +1,24 @@
+/**
+ * @author John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-12
+ */
+
 #ifndef LEVEL_HPP
 #define LEVEL_HPP
 
 #include "HauntedHouse.hpp"
+#include "Player.hpp"
 #include <vector>
 #include <map>
 
 /**
  * @class Level
  * @brief Base class for managing a level in the game.
- *
- * The Level class manages a collection of rooms, handles transitions, and
- * allows for dynamic customization of room connections.
  */
 class Level {
 protected:
     std::vector<HauntedHouse*> roomOrder; ///< Ordered list of rooms in the level.
     HauntedHouse* currentRoom;            ///< Pointer to the current room.
-//  Player* player;
 
 public:
     /**
@@ -58,15 +60,10 @@ public:
     void showActions() const;
 
     /**
-     * @brief pure virtual function that Handles transition effects between rooms.
-     */
-    virtual void roomTransition() = 0;
-
-    /**
      * @brief Handles player input and transitions to the next room or performs an action.
      * @param choice Player's action choice.
      */
-    void handleInput(int choice);
+    void handleInput(int choice, Player* player);
 };
 
 #endif // LEVEL_HPP

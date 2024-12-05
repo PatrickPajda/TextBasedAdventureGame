@@ -1,3 +1,8 @@
+/**
+ * @author John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-12
+ */
+
 #include "FakeItemRoom.hpp"
 
 FakeItemRoom::FakeItemRoom(std::string description, std::string fakeItemName, std::string deathItemName)
