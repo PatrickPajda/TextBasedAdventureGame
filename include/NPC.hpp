@@ -9,6 +9,7 @@
 #include <string>
 #include <iostream>
 #include "Item.hpp"
+#include "Player.hpp"
 
 /**
  * @class NPC
@@ -47,7 +48,11 @@ public:
      * Checks if the Item the Player has is
      * the correct item to pass to the next level.
      */
-    virtual bool checkItem(Item* playerItem) const = 0;
+    virtual bool checkItem(Item* playerItem);
+
+    //virtual void interact();
+
+
 
     bool getIsSolved() const {return isSolved;}
 

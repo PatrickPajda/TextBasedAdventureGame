@@ -2,6 +2,7 @@
 #define GHOST_HPP
 
 #include "NPC.hpp"
+#include "Item.hpp"
 
 /**
  * @class Ghost
@@ -16,7 +17,9 @@ public:
 
     void greet() const override;
 
-    bool checkItem(Item* playerItem) const override;
+    //void interact();
+
+    //bool checkItem(Item* playerItem);
 
     void giveHint() const override;
 
