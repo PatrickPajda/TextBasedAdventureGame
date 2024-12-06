@@ -51,10 +51,10 @@ We also outlined the structure of game levels: Level 1: Main Floor, Level 2: Bas
 
 4 of December |
 
-* NPCs: monsters(Skeleton, Mummy, Zombie)
+* NPCs: monsters(Skeleton, Witch, Ghost)
 * Environments: LivingRoom, Basement, Garden (as levels) and RealItemRoom, FakeItemRoom, DeathRoom(Death trap)
 * Usable Items: Real items, Fake items, Death items
-* Puzzles: Real item, Fake item, Death item
+* Puzzles: player trying to find the real item to give it to the NPC, player should avoid to go to the DeathRoom
 * How to loss the game:
 1. Player enters to the DeathRoom and dies.
 2. Player pick up the fake item and give it to the NPC and get damage, after geting damage 3 time player dies.
