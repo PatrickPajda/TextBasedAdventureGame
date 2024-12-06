@@ -16,20 +16,21 @@
  * @brief Abstract base class for all npcs.
  */
 class NPC {
-protected:
+ protected:
     std::string name;
     std::string greeting;
     Item* requiredItem;
     bool isSolved;
 
 
-public:
+ public:
     /**
      * @brief Constructor for Monster.
      * @param npcName The name of the monster.
      * @param npcGreeting The greeting message of the monster.
      */
-    NPC(const std::string& npcName, const std::string& npcGreeting, Item* item)
+    NPC(const std::string& npcName, 
+    const std::string& npcGreeting, Item* item)
         : name(npcName), greeting(npcGreeting), requiredItem(item), isSolved(false) {}
 
     /**
@@ -59,7 +60,6 @@ public:
     void setIsSolved(bool solved) {isSolved = solved;}
 
     virtual void giveHint() const = 0;
-
 };
 
 #endif // NPC_HPP

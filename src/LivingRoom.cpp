@@ -7,5 +7,6 @@ LivingRoom::LivingRoom() : HauntedHouse("You are standing in the living room. "
 }
 
 void LivingRoom::inspectRoom() {
-    std::cout << "You see a warm fireplace, a comfy couch, and a coffee table." << std::endl;
+    std::cout << "You see a warm fireplace," 
+   " a comfy couch, and a coffee table." << std::endl;
 }

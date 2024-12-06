@@ -9,7 +9,7 @@
  * @brief A derived class representing a ghost monster.
  */
 class Ghost : public NPC {
-public:
+ public:
     /**
      * @brief Constructor for Ghost.
      */
@@ -22,7 +22,6 @@ public:
     //bool checkItem(Item* playerItem);
 
     void giveHint() const override;
-
 };
 
 #endif // GHOST_HPP

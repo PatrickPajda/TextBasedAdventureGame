@@ -11,7 +11,6 @@
 #include "Witch.hpp"
 
 int main() {
-
     RoomNavigation* startRoom = new RoomNavigation();
     LivingRoom* room = new LivingRoom();
     Player* player = new Player(startRoom);
@@ -19,7 +18,7 @@ int main() {
     Item* key;
     Ghost* ghost = new Ghost(key);
    // NPC* skeleton = new Skeleton();
-    //NPC* witch = new Witch();
+//NPC* witch = new Witch();
 
     ghost->greet();
     //skeleton->greet();
@@ -62,12 +61,9 @@ int main() {
             "valid choice." << std::endl;
         }
     }
-
-    
-
    // Item* realItem = new Item("Real Item", "This is the real item!", true);
 
-    //std::vector<Item*> fakeItems;
+//std::vector<Item*> fakeItems;
    // fakeItems.push_back(new Item("Fake Item #1", "This is fake item #1", true));
    // fakeItems.push_back(new Item("Fake Item #2", "This is fake item #2", true));
    // fakeItems.push_back(new Item("Fake Item #3", "This is fake item #3", true));
@@ -79,8 +75,6 @@ int main() {
    // realItemRoom->inspectRoom();
 
    // delete realItemRoom;
-
-
     delete itemInRoom;
     delete player;
     delete room;

@@ -3,7 +3,6 @@
 RealItemRoom::RealItemRoom(Item* realItem, std::vector<Item*> fakeItems) : HauntedHouse("Real Item Room"), realItem_(realItem), fakeItems_(std::move(fakeItems)) {}
 
 RealItemRoom::~RealItemRoom() {
-
     delete realItem_;
 
     for (Item* item : fakeItems_) {
