@@ -15,7 +15,6 @@ int main() {
     LivingRoom* room = new LivingRoom();
     Player* player = new Player(startRoom);
     Item* itemInRoom = new Item("Item", "It looks like an Item!", true);
-    Item* key;
     Ghost* ghost = new Ghost(itemInRoom);
    // NPC* skeleton = new Skeleton();
 //NPC* witch = new Witch();

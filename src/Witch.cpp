@@ -1,22 +1,11 @@
-//#include "Witch.hpp"
+#include "Witch.hpp"
 
-//Witch::Witch() : NPC("Witch", "Hello...I am a witch", requiredItem) {}
+Witch::Witch(Item* item) : NPC("Witch", item) {}
 
-//void Witch::greet() const {
-//    std::cout << "Hello...I am a witch.." << std::endl;
-//}
+void Witch::greet() const {
+    std::cout << "Hello...I am a witch.." << std::endl;
+}
 
-//bool Witch::checkItem(Item* playerItem) const {
-//    if (playerItem == requiredItem) {
-//        std::cout << "This is the correct item!" << std::endl;
-//        const_cast<Witch*>(this)->setIsSolved(true);
-//        return true;
-//    } else {
-//        std::cout << "This is not the correct item!" << std::endl;
-//        return false;
-//    }
-//}
-
-//void Witch::giveHint() const {
-//    std::cout << "You are looking for the required item" << std::endl;
-//}
+void Witch::giveHint() const {
+    std::cout << "You are looking for a broom stick" << std::endl;
+}
