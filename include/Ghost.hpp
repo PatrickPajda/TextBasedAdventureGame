@@ -17,8 +17,6 @@ class Ghost : public NPC {
 
     void greet() const override;
 
-    //void interact();
-
     //bool checkItem(Item* playerItem);
 
     void giveHint() const override;

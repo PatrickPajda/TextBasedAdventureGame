@@ -35,3 +35,7 @@ void Player::drop(Item* newItem) {
     item = nullptr;
     }
 }
+
+Item* Player::getItem() {
+    return item;
+}

@@ -43,6 +43,8 @@ class Player {
      */
     void drop(Item* newItem);
 
+    Item* getItem();
+
  private:
     RoomNavigation* currentRoom;
     Item* item;

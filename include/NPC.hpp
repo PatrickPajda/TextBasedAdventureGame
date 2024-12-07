@@ -18,7 +18,6 @@
 class NPC {
  protected:
     std::string name;
-    std::string greeting;
     Item* requiredItem;
     bool isSolved;
 
@@ -29,9 +28,8 @@ class NPC {
      * @param npcName The name of the monster.
      * @param npcGreeting The greeting message of the monster.
      */
-    NPC(const std::string& npcName, 
-    const std::string& npcGreeting, Item* item)
-        : name(npcName), greeting(npcGreeting), requiredItem(item), isSolved(false) {}
+    NPC(const std::string& npcName, Item* item)
+        : name(npcName), requiredItem(item), isSolved(false) {}
 
     /**
      * @brief Virtual destructor.
@@ -51,9 +49,9 @@ class NPC {
      */
     virtual bool checkItem(Item* playerItem);
 
-    //virtual void interact();
+    virtual void interact(Player* player);
 
-
+    virtual void interactMenu();
 
     bool getIsSolved() const {return isSolved;}
 

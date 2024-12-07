@@ -16,11 +16,9 @@ int main() {
     Player* player = new Player(startRoom);
     Item* itemInRoom = new Item("Item", "It looks like an Item!", true);
     Item* key;
-    Ghost* ghost = new Ghost(key);
+    Ghost* ghost = new Ghost(itemInRoom);
    // NPC* skeleton = new Skeleton();
 //NPC* witch = new Witch();
-
-    ghost->greet();
     //skeleton->greet();
     //witch->greet();
 
@@ -34,9 +32,8 @@ int main() {
         std::cout << "2. Interact. (Describe the room)" << std::endl;
         std::cout << "3. Pick up object." << std::endl;
         std::cout << "4. Drop the item." << std::endl;
-        std::cout << "5. Greet ghost." << std::endl;
-        std::cout << "6. Interact with ghost." << std::endl;
-        std::cout << "7. Exit Game." << std::endl;
+        std::cout << "5. Interact with ghost." << std::endl;
+        std::cout << "6. Exit Game." << std::endl;
         std::cout << "Choice: ";
         std::getline(std::cin, choice);
 
@@ -50,10 +47,8 @@ int main() {
         } else if (choice == "4") {
             player->drop(itemInRoom);
         } else if (choice == "5") {
-            ghost->greet();
+            ghost->interact(player);
         } else if (choice == "6") {
-            ghost->checkItem(key);
-        } else if (choice == "7") {
             std::cout << "Exiting Game. Thank-you for playing!" << std::endl;
             break;
         } else {
