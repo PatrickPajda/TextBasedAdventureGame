@@ -13,7 +13,7 @@
  * @brief A subclass of NPC representing a ghost monster.
  */
 class Ghost : public NPC {
-public:
+ public:
     /**
      * @brief Constructs a Ghost NPC.
      * @param item The item required by the ghost.

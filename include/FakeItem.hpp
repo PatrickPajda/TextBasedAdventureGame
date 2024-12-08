@@ -13,7 +13,7 @@
  * @brief Represents an item that causes the player to take damage when interacted with.
  */
 class FakeItem : public Item {
-public:
+ public:
     /**
      * @brief Constructs a FakeItem.
      * @param name The name of the fake item.

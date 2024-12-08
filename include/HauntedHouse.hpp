@@ -14,10 +14,10 @@
  * @brief Base class for all rooms in the haunted house.
  */
 class HauntedHouse {
-protected:
+ protected:
     std::string description; ///< Description of the room.
 
-public:
+ public:
     /**
      * @brief Constructs a HauntedHouse object with a description.
      * @param desc A string description of the room.

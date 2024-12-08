@@ -13,7 +13,7 @@
  * @brief Represents an item that kills the player when picked up.
  */
 class DeathItem : public Item {
-public:
+ public:
     /**
      * @brief Constructs a DeathItem with a name.
      * @param name The name of the death item.

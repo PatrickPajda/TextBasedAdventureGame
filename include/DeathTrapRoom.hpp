@@ -10,7 +10,7 @@
  * The DeathTrapRoom presents the player with a potentially fatal choice.
  */
 class DeathTrapRoom : public HauntedHouse {
-public:
+ public:
     /**
      * @brief Constructs a DeathTrapRoom with a description and trap inquiry.
      * @param description Description of the room.

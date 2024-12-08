@@ -13,11 +13,11 @@
  * @brief Represents the player in the game.
  */
 class Player {
-private:
+ private:
     int health; ///< The player's health points.
     Item* currentItem; ///< The item currently held by the player.
 
-public:
+ public:
     /**
      * @brief Constructs a Player with initial health.
      * @param initialHealth The starting health of the player.

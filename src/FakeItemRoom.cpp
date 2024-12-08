@@ -5,7 +5,9 @@
 
 #include "FakeItemRoom.hpp"
 
-FakeItemRoom::FakeItemRoom(std::string description, std::string fakeItemName, std::string deathItemName)
+FakeItemRoom::FakeItemRoom(const std::string& description,
+                            const std::string& fakeItemName,
+                            const std::string& deathItemName)
     : HauntedHouse(description),
       fakeItem(new FakeItem(fakeItemName)),
       deathItem(new DeathItem(deathItemName)) {}
@@ -19,7 +21,7 @@ std::map<int, std::string> FakeItemRoom::getActions() const {
     return {
         {1, "Pick up the " + fakeItem->getName()},
         {2, "Pick up the " + deathItem->getName()},
-        {3, "Go back."}
+        {3, "Go back to the Living Room."}
     };
 }
 
@@ -27,29 +29,10 @@ std::string FakeItemRoom::getRoomType() const {
     return "FakeItemRoom";
 }
 
+FakeItem* FakeItemRoom::getFakeItem() const {
+    return fakeItem;
+}
 
-// void FakeItemRoom::setDeathItem(DeathItem* _deathItem){
-//     if (deathItem != nullptr){
-//         deathItem = _deathItem;
-
-//     }
-
-// }
-
-// void FakeItemRoom::setFakeItem(FakeItem* _fakeItem){
-//     if (fakeItem != nullptr){
-//         fakeItem = _fakeItem;
-//     }
-// }
-
-// DeathItem* FakeItemRoom::getDeathItem(){
-//     if (DeathItem != nullptr){
-//         return deathItem;
-//     }
-// }
-
-// FakeItem* FakeItemRoom::getFakeItem(){
-//     if (fakeItem != nullptr){
-//         return fakeItem;
-//     }
-// }
+DeathItem* FakeItemRoom::getDeathItem() const {
+    return deathItem;
+}

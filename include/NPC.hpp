@@ -16,12 +16,12 @@
  * @brief Abstract base class for all NPCs.
  */
 class NPC {
-protected:
+ protected:
     std::string name; ///< Name of the NPC.
     Item* requiredItem; ///< Item required to solve the NPC's challenge.
     bool isSolved; ///< Indicates whether the NPC challenge is solved.
 
-public:
+ public:
     /**
      * @brief Constructs an NPC.
      * @param npcName The name of the NPC.

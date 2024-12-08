@@ -17,7 +17,7 @@
  * @brief Base class for managing a level in the game.
  */
 class Level {
-protected:
+ protected:
     std::vector<HauntedHouse*> roomOrder; ///< Ordered list of rooms in the level.
     HauntedHouse* currentRoom; ///< Pointer to the current room.
     NPC* levelNPC; ///< Pointer to the NPC for the level.
@@ -29,7 +29,7 @@ protected:
      */
     void showHelpMenu() const;
 
-public:
+ public:
     /**
      * @brief Constructs a Level object with a player instance.
      * @param playerInstance Pointer to the player instance.

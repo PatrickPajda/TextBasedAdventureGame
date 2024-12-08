@@ -18,13 +18,13 @@
  * @brief A level where the player explores a garden area.
  */
 class GardenLevel : public Level {
-private:
+ private:
     LivingRoom* gazebo; ///< The central room for the garden level.
     RealItemRoom* toolShed; ///< A room containing a real item.
     FakeItemRoom* rosePit; ///< A room with a fake and a death item.
     DeathTrapRoom* flowerField; ///< A room with a deadly trap.
 
-public:
+ public:
     /**
      * @brief Constructs a GardenLevel object and initializes rooms.
      * @param playerInstance Pointer to the player instance.

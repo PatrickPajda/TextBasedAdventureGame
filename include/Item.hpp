@@ -13,10 +13,10 @@
  * @brief Represents an item in the game.
  */
 class Item {
-protected:
+ protected:
     std::string name; ///< The name of the item.
 
-public:
+ public:
     /**
      * @brief Constructs an Item with a name.
      * @param name The name of the item.

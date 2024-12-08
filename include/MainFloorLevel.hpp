@@ -18,13 +18,13 @@
  * @brief A level representing the main floor of the haunted house.
  */
 class MainFloorLevel : public Level {
-private:
+ private:
     LivingRoom* foyer; ///< The central room for the main floor level.
     RealItemRoom* library; ///< A room containing a real item.
     FakeItemRoom* diningHall; ///< A room with a fake and a death item.
     DeathTrapRoom* parlor; ///< A room with a deadly trap.
 
-public:
+ public:
     /**
      * @brief Constructs a MainFloorLevel object and initializes rooms.
      * @param playerInstance Pointer to the player instance.

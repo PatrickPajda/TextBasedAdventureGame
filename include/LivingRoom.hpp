@@ -13,7 +13,7 @@
  * @brief Represents the central room in the haunted house.
  */
 class LivingRoom : public HauntedHouse {
-public:
+ public:
     /**
      * @brief Constructs a LivingRoom object.
      */

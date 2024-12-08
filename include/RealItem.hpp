@@ -13,7 +13,7 @@
  * @brief Represents an item that can be verified by an NPC.
  */
 class RealItem : public Item {
-public:
+ public:
     /**
      * @brief Constructs a RealItem.
      * @param name The name of the real item.

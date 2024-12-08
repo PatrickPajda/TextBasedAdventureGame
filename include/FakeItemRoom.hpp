@@ -1,67 +1,64 @@
+/**
+ * @author John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-12
+ */
+
 #ifndef FAKEITEMROOM_HPP
 #define FAKEITEMROOM_HPP
 
 #include "HauntedHouse.hpp"
+#include "FakeItem.hpp"
+#include "DeathItem.hpp"
 
 /**
  * @class FakeItemRoom
  * @brief A room containing one fake item and one deadly item.
- *
- * The FakeItemRoom challenges the player with a dangerous item choice.
  */
 class FakeItemRoom : public HauntedHouse {
-public:
+ private:
+    FakeItem* fakeItem; ///< Pointer to the fake item in the room.
+    DeathItem* deathItem; ///< Pointer to the deadly item in the room.
+
+ public:
     /**
      * @brief Constructs a FakeItemRoom with specific items.
      * @param description Description of the room.
      * @param fakeItemName Name of the fake item.
-     * @param deathItemName Name of the death item.
+     * @param deathItemName Name of the deadly item.
      */
-    FakeItemRoom(std::string description, std::string fakeItemName, std::string deathItemName);
+    FakeItemRoom(const std::string& description,
+                    const std::string& fakeItemName,
+                    const std::string& deathItemName);
 
     /**
      * @brief Destructor for FakeItemRoom.
+     * Deletes dynamically allocated items.
      */
     ~FakeItemRoom();
 
     /**
-     * @brief Get a map of actions available in the room.
+     * @brief Retrieves available actions in the room.
      * @return A map of action keys to action descriptions.
      */
     std::map<int, std::string> getActions() const override;
 
     /**
-     * @brief Get the unique identifier for the room type.
+     * @brief Retrieves the unique identifier for the room type.
      * @return A string representing the room type.
      */
     std::string getRoomType() const override;
 
     /**
-     * @brief set the pointer for the death item.
+     * @brief Retrieves the pointer to the fake item.
+     * @return Pointer to the fake item.
      */
-    void setDeathItem(DeathItem* deathItem);
+    FakeItem* getFakeItem() const;
 
     /**
-     * @brief set the pointer for the fake item.
+     * @brief Retrieves the pointer to the deadly item.
+     * @return Pointer to the deadly item.
      */
-    void setFakeItem(FakeItem* fakeItem);
-
-    /**
-     * @brief Get the pointer of the death item
-     * @return A pointer of type DeathItem
-     */
-    DeathItem* getDeathItem();
-
-    /**
-     * @brief Get the pointer of the fake item
-     * @return A pointer of type FakeItem
-     */
-    FakeItem* getFakeItem();
-
- private:
-    std::string livingRoomName;
-    //FakeItem* fakeItem;
-    //DeathItem* deathItem;
+    DeathItem* getDeathItem() const;
 };
 
 #endif // FAKEITEMROOM_HPP
