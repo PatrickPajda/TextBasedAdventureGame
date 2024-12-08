@@ -3,6 +3,8 @@
  * @date 2024-11
  */
 
+#include <map>
+#include <string>
 #ifndef DEATHTRAPROOM_HPP
 #define DEATHTRAPROOM_HPP
 

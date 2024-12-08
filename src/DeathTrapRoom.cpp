@@ -6,8 +6,12 @@
 #include "DeathTrapRoom.hpp"
 #include <iostream>
 
-DeathTrapRoom::DeathTrapRoom(const std::string& description, const std::string& trapInquiry, const std::string& deathMessage)
-    : HauntedHouse(description), trapInquiry(trapInquiry), deathMessage(deathMessage) {}
+DeathTrapRoom::DeathTrapRoom(const std::string& description,
+                                const std::string& trapInquiry,
+                                const std::string& deathMessage)
+    : HauntedHouse(description),
+    trapInquiry(trapInquiry),
+    deathMessage(deathMessage) {}
 
 std::map<int, std::string> DeathTrapRoom::getActions() const {
     return {
