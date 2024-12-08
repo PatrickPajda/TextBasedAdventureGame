@@ -15,7 +15,7 @@ void BasementLevel::setupLevel() {
     "Rusty Wrench",
     "Golden Key");
     laundryRoom = new FakeItemRoom("Laundry room with scattered clothes.",
-    "Fake Coin",
+    "Gold Coin",
     "Cursed Sock");
     secretPassage = new DeathTrapRoom("A hidden passageway.",
     "Open the mysterious door?",

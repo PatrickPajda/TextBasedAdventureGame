@@ -6,11 +6,11 @@
 #ifndef LEVEL_HPP
 #define LEVEL_HPP
 
+#include <vector>
+#include <map>
 #include "HauntedHouse.hpp"
 #include "Player.hpp"
 #include "NPC.hpp"
-#include <vector>
-#include <map>
 
 /**
  * @class Level

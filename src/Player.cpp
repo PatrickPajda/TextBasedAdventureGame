@@ -6,7 +6,9 @@
 #include "Player.hpp"
 #include <iostream>
 
-Player::Player(int initialHealth) : health(initialHealth), currentItem(nullptr) {}
+Player::Player(int initialHealth) : 
+            health(initialHealth),
+            currentItem(nullptr) {}
 
 Player::~Player() {
     delete currentItem;
@@ -38,7 +40,8 @@ void Player::drop() {
 
 void Player::takeDamage(int damage) {
     health -= damage;
-    std::cout << "You took " << damage << " damage! Current health: " << health << "\n";
+    std::cout << "You took " << damage
+        << " damage! Current health: "<< health << "\n";
     if (health <= 0) {
         std::cout << "You have died. Game over.\n";
     }

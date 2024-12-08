@@ -7,7 +7,7 @@
 #include "Level.hpp"
 
 
-Level::Level(Player* playerInstance) 
+Level::Level(Player* playerInstance)
     : currentRoom(nullptr),
     levelNPC(nullptr),
     isLevelComplete(false),
