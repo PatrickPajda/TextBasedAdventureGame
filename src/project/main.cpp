@@ -16,10 +16,8 @@ int main() {
     Player* player = new Player(startRoom);
     Item* itemInRoom = new Item("Item", "It looks like an Item!", true);
     Ghost* ghost = new Ghost(itemInRoom);
-   // NPC* skeleton = new Skeleton();
-//NPC* witch = new Witch();
-    //skeleton->greet();
-    //witch->greet();
+    Skeleton* skeleton = new Skeleton(itemInRoom);
+    Witch* witch = new Witch(itemInRoom);
 
 
     std::cout << "You find yourself in a Haunted House."
@@ -32,7 +30,9 @@ int main() {
         std::cout << "3. Pick up object." << std::endl;
         std::cout << "4. Drop the item." << std::endl;
         std::cout << "5. Interact with ghost." << std::endl;
-        std::cout << "6. Exit Game." << std::endl;
+        std::cout << "6. Interact with skeleton." << std::endl;
+        std::cout << "7. Interact with witch." << std::endl;
+        std::cout << "8. Exit Game." << std::endl;
         std::cout << "Choice: ";
         std::getline(std::cin, choice);
 
@@ -48,6 +48,10 @@ int main() {
         } else if (choice == "5") {
             ghost->interact(player);
         } else if (choice == "6") {
+            skeleton->interact(player);
+        } else if (choice == "7") {
+            witch->interact(player);
+        } else if (choice == "8") {
             std::cout << "Exiting Game. Thank-you for playing!" << std::endl;
             break;
         } else {
@@ -55,27 +59,14 @@ int main() {
             "valid choice." << std::endl;
         }
     }
-   // Item* realItem = new Item("Real Item", "This is the real item!", true);
 
-//std::vector<Item*> fakeItems;
-   // fakeItems.push_back(new Item("Fake Item #1", "This is fake item #1", true));
-   // fakeItems.push_back(new Item("Fake Item #2", "This is fake item #2", true));
-   // fakeItems.push_back(new Item("Fake Item #3", "This is fake item #3", true));
-
-   // RealItemRoom* realItemRoom = new RealItemRoom(realItem, fakeItems);
-
-   // realItemRoom->describe();
-
-   // realItemRoom->inspectRoom();
-
-   // delete realItemRoom;
     delete itemInRoom;
     delete player;
     delete room;
     delete startRoom;
     delete ghost;
-    //delete skeleton;
-    //delete witch;
+    delete skeleton;
+    delete witch;
 
     return 0;
 }
