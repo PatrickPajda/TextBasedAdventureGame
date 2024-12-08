@@ -19,7 +19,7 @@ std::map<int, std::string> DeathTrapRoom::getActions() const {
     };
 }
 
-void DeathTrapRoom::outputDeathMessage(){
+void DeathTrapRoom::outputDeathMessage() {
     std::cout << deathMessage << std::endl;
 }
 

@@ -6,7 +6,7 @@
 #include "Player.hpp"
 #include <iostream>
 
-Player::Player(int initialHealth) : 
+Player::Player(int initialHealth) :
             health(initialHealth),
             currentItem(nullptr) {}
 
