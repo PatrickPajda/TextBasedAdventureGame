@@ -6,6 +6,7 @@
 #ifndef REALITEM_HPP
 #define REALITEM_HPP
 
+#include <string>
 #include "Item.hpp"
 
 /**

@@ -13,7 +13,7 @@
  * @brief A subclass of NPC representing a witch monster.
  */
 class Witch : public NPC {
-public:
+ public:
     /**
      * @brief Constructs a Witch NPC.
      * @param item The item required by the witch.

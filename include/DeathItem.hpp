@@ -6,6 +6,7 @@
 #ifndef DEATHITEM_HPP
 #define DEATHITEM_HPP
 
+#include <string>
 #include "Item.hpp"
 
 /**

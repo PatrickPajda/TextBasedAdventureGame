@@ -6,6 +6,8 @@
 #ifndef FAKEITEMROOM_HPP
 #define FAKEITEMROOM_HPP
 
+#include <map>
+#include <string>
 #include "HauntedHouse.hpp"
 #include "FakeItem.hpp"
 #include "DeathItem.hpp"

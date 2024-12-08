@@ -6,7 +6,9 @@
 #include "LivingRoom.hpp"
 
 LivingRoom::LivingRoom()
-    : HauntedHouse("You are in the Living Room. It looks eerie and there's an NPC watching you.") {}
+    : HauntedHouse(
+"You are in the Living Room. It looks eerie and there's an NPC watching you."
+) {}
 
 std::map<int, std::string> LivingRoom::getActions() const {
     return {

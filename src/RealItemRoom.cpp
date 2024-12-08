@@ -5,7 +5,9 @@
 
 #include "RealItemRoom.hpp"
 
-RealItemRoom::RealItemRoom(const std::string& description, const std::string& fakeItemName, const std::string& realItemName)
+RealItemRoom::RealItemRoom(const std::string& description,
+                            const std::string& fakeItemName,
+                            const std::string& realItemName)
     : HauntedHouse(description),
       fakeItem(new FakeItem(fakeItemName)),
       realItem(new RealItem(realItemName)) {}

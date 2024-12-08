@@ -6,6 +6,8 @@
 #ifndef MAINFLOORLEVEL_HPP
 #define MAINFLOORLEVEL_HPP
 
+#include <map>
+#include <string>
 #include "Level.hpp"
 #include "LivingRoom.hpp"
 #include "RealItemRoom.hpp"

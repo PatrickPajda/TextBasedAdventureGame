@@ -13,7 +13,7 @@
  * @brief A subclass of NPC representing a skeleton monster.
  */
 class Skeleton : public NPC {
-public:
+ public:
     /**
      * @brief Constructs a Skeleton NPC.
      * @param item The item required by the skeleton.

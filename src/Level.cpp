@@ -3,11 +3,15 @@
  * @date 2024-12
  */
 
-#include "Level.hpp"
 #include <iostream>
+#include "Level.hpp"
+
 
 Level::Level(Player* playerInstance) 
-    : currentRoom(nullptr), levelNPC(nullptr), isLevelComplete(false), player(playerInstance) {}
+    : currentRoom(nullptr),
+    levelNPC(nullptr),
+    isLevelComplete(false),
+    player(playerInstance) {}
 
 Level::~Level() {
     for (auto room : roomOrder) {
@@ -36,10 +40,13 @@ void Level::showActions() const {
 
     if (currentRoom) {
         auto actions = currentRoom->getActions();
-        for (const auto& action : actions) { // Workaround for structured binding
+        for (const auto& action : actions) {
             const auto& key = action.first;
             const auto& description = action.second;
-            std::cout << "Press (" << key << ") to " << description << "." << std::endl;
+            std::cout
+            << "Press (" << key
+            << ") to " << description
+            << "." << std::endl;
         }
     }
 }
@@ -88,12 +95,18 @@ void Level::handleInput(int choice) {
 }
 
 void Level::showHelpMenu() const {
-    std::cout << "----- Help Menu -----\n";
-    std::cout << "1. Use the numeric options to navigate between rooms.\n";
-    std::cout << "2. Pick up items by selecting the appropriate option in the room.\n";
-    std::cout << "3. Drop items anytime using 'D'.\n";
-    std::cout << "4. Interact with NPCs to complete the level.\n";
-    std::cout << "---------------------\n";
+    std::cout
+    << "----- Help Menu -----\n";
+    std::cout
+    << "1. Use the numeric options to navigate between rooms.\n";
+    std::cout
+    << "2. Pick up items by selecting the appropriate option in the room.\n";
+    std::cout
+    << "3. Drop items anytime using 'D'.\n";
+    std::cout
+    << "4. Interact with NPCs to complete the level.\n";
+    std::cout
+    << "---------------------\n";
 }
 
 bool Level::checkLevelComplete() const {

@@ -1,6 +1,8 @@
 #ifndef DEATHTRAPROOM_HPP
 #define DEATHTRAPROOM_HPP
 
+#include <map>
+#include <string>
 #include "HauntedHouse.hpp"
 
 /**

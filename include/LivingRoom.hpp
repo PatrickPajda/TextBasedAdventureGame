@@ -6,6 +6,8 @@
 #ifndef LIVINGROOM_HPP
 #define LIVINGROOM_HPP
 
+#include <map>
+#include <string>
 #include "HauntedHouse.hpp"
 
 /**

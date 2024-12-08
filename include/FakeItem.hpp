@@ -6,6 +6,7 @@
 #ifndef FAKEITEM_HPP
 #define FAKEITEM_HPP
 
+#include <string>
 #include "Item.hpp"
 
 /**

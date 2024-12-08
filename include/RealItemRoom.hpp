@@ -6,6 +6,8 @@
 #ifndef REALITEMROOM_HPP
 #define REALITEMROOM_HPP
 
+#include <map>
+#include <string>
 #include "HauntedHouse.hpp"
 #include "RealItem.hpp"
 #include "FakeItem.hpp"

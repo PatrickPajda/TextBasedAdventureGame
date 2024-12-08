@@ -11,9 +11,15 @@ BasementLevel::BasementLevel(Player* playerInstance) : Level(playerInstance) {
 
 void BasementLevel::setupLevel() {
     boilerRoom = new LivingRoom();
-    storageRoom = new RealItemRoom("Storage room filled with old boxes.", "Rusty Wrench", "Golden Key");
-    laundryRoom = new FakeItemRoom("Laundry room with scattered clothes.", "Fake Coin", "Cursed Sock");
-    secretPassage = new DeathTrapRoom("A hidden passageway.", "Open the mysterious door?", "The ceiling collapses, and you are crushed!");
+    storageRoom = new RealItemRoom("Storage room filled with old boxes.",
+    "Rusty Wrench",
+    "Golden Key");
+    laundryRoom = new FakeItemRoom("Laundry room with scattered clothes.",
+    "Fake Coin",
+    "Cursed Sock");
+    secretPassage = new DeathTrapRoom("A hidden passageway.",
+    "Open the mysterious door?",
+    "The ceiling collapses, and you are crushed!");
 
     // Assign NPC
     levelNPC = new Skeleton(storageRoom->getRealItem());
