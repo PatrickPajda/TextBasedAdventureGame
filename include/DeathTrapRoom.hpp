@@ -1,46 +1,51 @@
+/**
+ * @author John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-11
+ */
+
 #ifndef DEATHTRAPROOM_HPP
 #define DEATHTRAPROOM_HPP
 
-#include <map>
-#include <string>
 #include "HauntedHouse.hpp"
 
 /**
  * @class DeathTrapRoom
- * @brief A room with a deadly trap.
- *
- * The DeathTrapRoom presents the player with a potentially fatal choice.
+ * @brief A room with a deadly trap that challenges the player.
  */
 class DeathTrapRoom : public HauntedHouse {
+ private:
+    std::string trapInquiry;
+    std::string deathMessage;
+
  public:
     /**
-     * @brief Constructs a DeathTrapRoom with a description and trap inquiry.
+     * @brief Constructs a DeathTrapRoom with a 
+     * description, inquiry, and death message.
      * @param description Description of the room.
      * @param trapInquiry A message or question related to the trap.
+     * @param deathMessage A message displayed if the player triggers the trap
      */
-    DeathTrapRoom(std::string description, std::string trapInquiry);
+    DeathTrapRoom(const std::string& description,
+                     const std::string& trapInquiry,
+                     const std::string& deathMessage);
 
     /**
-     * @brief Get a map of actions available in the room.
+     * @brief Retrieves available actions in the room.
      * @return A map of action keys to action descriptions.
      */
     std::map<int, std::string> getActions() const override;
 
     /**
-     * @brief prints out the death message when player interacts with trap
-     */
-    void outputDeathMessage();
-
-    /**
-     * @brief Get the unique identifier for the room type.
+     * @brief Retrieves the unique identifier for the room type.
      * @return A string representing the room type.
      */
     std::string getRoomType() const override;
 
- private:
-    std::string livingRoomName;
-    std::string trapInquiry;
-    std::string deathMessage;
+    /**
+     * @brief Displays the death message when the trap is triggered.
+     */
+    void triggerTrap() const;
 };
 
 #endif // DEATHTRAPROOM_HPP
+

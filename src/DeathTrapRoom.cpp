@@ -4,25 +4,22 @@
  */
 
 #include "DeathTrapRoom.hpp"
+#include <iostream>
 
-DeathTrapRoom::DeathTrapRoom(std::string description,
-                                std::string trapInquiry,
-                                std::string deathMessage)
-    : HauntedHouse(description),
-    trapInquiry(trapInquiry),
-    deathMessage(deathMessage) {}
+DeathTrapRoom::DeathTrapRoom(const std::string& description, const std::string& trapInquiry, const std::string& deathMessage)
+    : HauntedHouse(description), trapInquiry(trapInquiry), deathMessage(deathMessage) {}
 
 std::map<int, std::string> DeathTrapRoom::getActions() const {
     return {
         {1, trapInquiry},
-        {2, "Go back"}
+        {2, "Go back to the Living Room."}
     };
-}
-
-void DeathTrapRoom::outputDeathMessage() {
-    std::cout << deathMessage << std::endl;
 }
 
 std::string DeathTrapRoom::getRoomType() const {
     return "DeathTrapRoom";
+}
+
+void DeathTrapRoom::triggerTrap() const {
+    std::cout << deathMessage << std::endl;
 }
