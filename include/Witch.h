@@ -3,16 +3,34 @@
  * @date 2024-11
  */
 
-#ifndef WITCH_H
-#define WITCH_H
+#ifndef WITCH_HPP
+#define WITCH_HPP
 
-#include "NPC.h"
+#include "NPC.hpp"
+
+/**
+ * @class Witch
+ * @brief A subclass of NPC that represents a witch character.
+ */
 
 class Witch : public NPC {
 public:
+    /**
+     * @brief Constructs a Witch NPC.
+     * @param item The item required by the witch.
+     */
     Witch(Item* item);
-    void interact() const override;
-    void trick() const override;
+
+    /**
+     * @brief Interacts with the player.
+     * @param player Pointer to the player instance.
+     */
+    void interact(Player* player) const override;
+
+    /**
+     * @brief Gives a hint to the player.
+     */
+    void giveHint() const override;
 };
 
-#endif // WITCH_H
+#endif // WITCH_HPP

@@ -5,16 +5,12 @@
 
 #include "Item.hpp"
 
-// Constructor implementation
-Item::Item(std::string name)
-    : name(std::move(name)) {}
+Item::Item(std::string name) : name(std::move(name)) {}
 
-// Getter for the name
 std::string Item::getName() const {
     return name;
 }
 
-// Check if the object is a death item
 bool Item::isDeathItem() const {
     return false;
 }

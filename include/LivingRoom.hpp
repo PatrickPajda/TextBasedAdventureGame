@@ -10,25 +10,23 @@
 
 /**
  * @class LivingRoom
- * @brief The starting room in the haunted house.
- *
- * The LivingRoom is the central hub from which the player can access other rooms.
+ * @brief Represents the central room in the haunted house.
  */
 class LivingRoom : public HauntedHouse {
 public:
     /**
-     * @brief Constructs a LivingRoom object with a predefined description.
+     * @brief Constructs a LivingRoom object.
      */
     LivingRoom();
 
     /**
-     * @brief Get a map of actions available in the living room.
+     * @brief Retrieves available actions in the Living Room.
      * @return A map of action keys to action descriptions.
      */
     std::map<int, std::string> getActions() const override;
 
     /**
-     * @brief Get the unique identifier for the room type.
+     * @brief Retrieves the unique identifier for the room type.
      * @return A string representing the room type.
      */
     std::string getRoomType() const override;

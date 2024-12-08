@@ -10,19 +10,19 @@
 
 /**
  * @class DeathItem
- * @brief Represents an item that causes the player to die when interacted with.
+ * @brief Represents an item that kills the player when picked up.
  */
 class DeathItem : public Item {
 public:
     /**
-     * @brief Constructs a DeathItem.
+     * @brief Constructs a DeathItem with a name.
      * @param name The name of the death item.
      */
-    explicit DeathItem(std::string name);
+    DeathItem(std::string name);
 
     /**
-     * @brief Checks if the item is a death item.
-     * @return True since this is a death item.
+     * @brief Indicates that this item is a death item.
+     * @return Always returns true.
      */
     bool isDeathItem() const override;
 };

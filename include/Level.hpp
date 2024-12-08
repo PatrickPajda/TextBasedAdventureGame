@@ -8,6 +8,7 @@
 
 #include "HauntedHouse.hpp"
 #include "Player.hpp"
+#include "NPC.hpp"
 #include <vector>
 #include <map>
 
@@ -18,52 +19,66 @@
 class Level {
 protected:
     std::vector<HauntedHouse*> roomOrder; ///< Ordered list of rooms in the level.
-    HauntedHouse* currentRoom;            ///< Pointer to the current room.
+    HauntedHouse* currentRoom; ///< Pointer to the current room.
+    NPC* levelNPC; ///< Pointer to the NPC for the level.
+    bool isLevelComplete; ///< Indicates whether the level is complete.
+    Player* player; ///< Pointer to the player object.
+
+    /**
+     * @brief Displays the help menu.
+     */
+    void showHelpMenu() const;
 
 public:
     /**
-     * @brief Constructs a Level object with no current room.
+     * @brief Constructs a Level object with a player instance.
+     * @param playerInstance Pointer to the player instance.
      */
-    Level();
+    Level(Player* playerInstance);
 
     /**
-     * @brief Virtual destructor for Level.
+     * @brief Destructor for the Level class.
      */
-    virtual ~Level() = default;
+    virtual ~Level();
 
     /**
      * @brief Sets up the room order and connections for the level.
-     *        Must be implemented by subclasses.
      */
     virtual void setupLevel() = 0;
 
     /**
-     * @brief Sets the current room.
+     * @brief Sets the current room in the level.
      * @param room Pointer to the room to set as the current room.
      */
     void setCurrentRoom(HauntedHouse* room);
 
     /**
-     * @brief Gets the current room.
+     * @brief Retrieves the current room.
      * @return Pointer to the current room.
      */
     HauntedHouse* getCurrentRoom() const;
 
     /**
-     * @brief Displays the description of the current room.
+     * @brief Displays the current room's description.
      */
     void describeCurrentRoom() const;
 
     /**
-     * @brief Displays the available actions in the current room.
+     * @brief Displays available actions for the player.
      */
     void showActions() const;
 
     /**
-     * @brief Handles player input and transitions to the next room or performs an action.
-     * @param choice Player's action choice.
+     * @brief Handles player input and transitions between rooms.
+     * @param choice The player's action choice.
      */
-    void handleInput(int choice, Player* player);
+    void handleInput(int choice);
+
+    /**
+     * @brief Checks if the level is complete.
+     * @return True if the level is complete, false otherwise.
+     */
+    bool checkLevelComplete() const;
 };
 
 #endif // LEVEL_HPP

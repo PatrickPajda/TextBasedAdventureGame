@@ -6,7 +6,15 @@
 #include "Level.hpp"
 #include <iostream>
 
-Level::Level() : currentRoom(nullptr) {}
+Level::Level(Player* playerInstance) 
+    : currentRoom(nullptr), levelNPC(nullptr), isLevelComplete(false), player(playerInstance) {}
+
+Level::~Level() {
+    for (auto room : roomOrder) {
+        delete room;
+    }
+    delete levelNPC;
+}
 
 void Level::setCurrentRoom(HauntedHouse* room) {
     currentRoom = room;
@@ -23,58 +31,69 @@ void Level::describeCurrentRoom() const {
 }
 
 void Level::showActions() const {
+    std::cout << "Press (H) for Help Menu.\n";
+    std::cout << "Press (D) to Drop Item.\n";
+
     if (currentRoom) {
         auto actions = currentRoom->getActions();
         for (const auto& [key, description] : actions) {
-            std::cout << "Press (" << key << ") to " << description << "." << std::endl;
+            std::cout << "Press (" << key << ") to " << description << ".\n";
         }
     }
 }
 
-void Level::handleInput(int choice, Player* player) {
+void Level::handleInput(int choice) {
+    if (choice == 'H') {
+        showHelpMenu();
+        return;
+    } else if (choice == 'D') {
+        player->drop();
+        return;
+    }
+
     if (!currentRoom) {
-        std::cout << "No current room set." << std::endl;
+        std::cout << "No current room set.\n";
         return;
     }
 
     auto actions = currentRoom->getActions();
     if (actions.find(choice) == actions.end()) {
-        std::cout << "Invalid choice. Try again." << std::endl;
+        std::cout << "Invalid choice. Try again.\n";
         return;
     }
 
-    if (currentRoom->getRoomType() == "RealItemRoom") {
-        RealItemRoom* realRoom = dynamic_cast<RealItemRoom*>(currentRoom);
-        if (choice == 1) {
-            player->pickUp(realRoom->getFakeItem());
-        } else if (choice == 2) {
-            player->pickUp(realRoom->getRealItem());
-        } else if (choice == 3) {
-            setCurrentRoom(roomOrder[0]); // Return to Living Room
+    std::string roomType = currentRoom->getRoomType();
+
+    if (roomType == "LivingRoom" && choice == 1) {
+        if (levelNPC) {
+            levelNPC->interact(player);
+            if (levelNPC->getIsSolved()) {
+                isLevelComplete = true;
+                std::cout << "Level completed! Well done!\n";
+            }
         }
-    } else if (currentRoom->getRoomType() == "FakeItemRoom") {
-        FakeItemRoom* fakeRoom = dynamic_cast<FakeItemRoom*>(currentRoom);
-        if (choice == 1) {
-            player->pickUp(fakeRoom->getFakeItem());
-        } else if (choice == 2) {
-            player->pickUp(fakeRoom->getDeathItem());
-        } else if (choice == 3) {
-            setCurrentRoom(roomOrder[0]); // Return to Living Room
+    } else if (roomType == "LivingRoom" && choice >= 2 && choice <= 4) {
+        setCurrentRoom(roomOrder[choice - 1]);
+    } else if (roomType == "RealItemRoom" || roomType == "FakeItemRoom") {
+        if (choice == 3) {
+            setCurrentRoom(roomOrder[0]);
         }
-    } else if (currentRoom->getRoomType() == "DeathTrapRoom") {
-        DeathTrapRoom* deathRoom = dynamic_cast<DeathTrapRoom*>(currentRoom);
-        if (choice == 1) {
-            deathRoom->outputDeathMessage();
-            player->takeDamage(player->getHealth()); // Kill the player
-        } else if (choice == 2) {
-            setCurrentRoom(roomOrder[0]); // Return to Living Room
-        }
-    } else if (currentRoom->getRoomType() == "LivingRoom") {
-        if (choice >= 2 && choice <= 4) {
-            setCurrentRoom(roomOrder[choice - 1]); // Move to the next room
-            std::cout << "You moved to a new room." << std::endl;
-        } else if (choice == 1) {
-            std::cout << "You talk to the NPC." << std::endl;
+    } else if (roomType == "DeathTrapRoom") {
+        if (choice == 2) {
+            setCurrentRoom(roomOrder[0]);
         }
     }
+}
+
+void Level::showHelpMenu() const {
+    std::cout << "----- Help Menu -----\n";
+    std::cout << "1. Use the numeric options to navigate between rooms.\n";
+    std::cout << "2. Pick up items by selecting the appropriate option in the room.\n";
+    std::cout << "3. Drop items anytime using 'D'.\n";
+    std::cout << "4. Interact with NPCs to complete the level.\n";
+    std::cout << "---------------------\n";
+}
+
+bool Level::checkLevelComplete() const {
+    return isLevelComplete;
 }

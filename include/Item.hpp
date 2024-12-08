@@ -10,32 +10,27 @@
 
 /**
  * @class Item
- * @brief Represents an item in the game that can be interacted with.
+ * @brief Represents an item in the game.
  */
 class Item {
 protected:
-    std::string name; ///< Name of the item.
+    std::string name; ///< The name of the item.
 
 public:
     /**
-     * @brief Default constructor for Item.
-     */
-    Item() = default;
-
-    /**
-     * @brief Constructs an Item.
+     * @brief Constructs an Item with a name.
      * @param name The name of the item.
      */
     explicit Item(std::string name);
 
     /**
-     * @brief Virtual destructor.
+     * @brief Virtual destructor for the Item class.
      */
     virtual ~Item() = default;
 
     /**
-     * @brief Gets the name of the item.
-     * @return The name of the item.
+     * @brief Retrieves the name of the item.
+     * @return The item's name.
      */
     std::string getName() const;
 

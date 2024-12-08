@@ -3,16 +3,33 @@
  * @date 2024-11
  */
 
-#ifndef GHOST_H
-#define GHOST_H
+#ifndef GHOST_HPP
+#define GHOST_HPP
 
-#include "NPC.h"
+#include "NPC.hpp"
 
+/**
+ * @class Ghost
+ * @brief A subclass of NPC that represents a ghost character.
+ */
 class Ghost : public NPC {
 public:
+    /**
+     * @brief Constructs a Ghost NPC.
+     * @param item The item required by the ghost.
+     */
     Ghost(Item* item);
-    void interact() const override;
-    void spook() const;
+
+    /**
+     * @brief Interacts with the player.
+     * @param player Pointer to the player instance.
+     */
+    void interact(Player* player) const override;
+
+    /**
+     * @brief Gives a hint to the player.
+     */
+    void giveHint() const override;
 };
 
-#endif // GHOST_H
+#endif // GHOST_HPP

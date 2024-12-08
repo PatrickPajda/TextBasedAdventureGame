@@ -14,18 +14,18 @@
  */
 class Player {
 private:
-    int health;       ///< Player's health.
-    Item* currentItem; ///< Pointer to the current item held by the player.
+    int health; ///< The player's health points.
+    Item* currentItem; ///< The item currently held by the player.
 
 public:
     /**
      * @brief Constructs a Player with initial health.
      * @param initialHealth The starting health of the player.
      */
-    explicit Player(int initialHealth);
+    Player(int initialHealth);
 
     /**
-     * @brief Destructor for Player.
+     * @brief Destructor for the Player class.
      */
     ~Player();
 
@@ -41,20 +41,20 @@ public:
     void drop();
 
     /**
-     * @brief Takes damage, reducing the player's health.
-     * @param damage The amount of damage to take.
+     * @brief Reduces the player's health by the specified amount.
+     * @param damage The amount of damage to apply.
      */
     void takeDamage(int damage);
 
     /**
-     * @brief Gets the player's current health.
-     * @return The current health of the player.
+     * @brief Retrieves the player's current health.
+     * @return The player's current health.
      */
     int getHealth() const;
 
     /**
-     * @brief Gets the player's current item.
-     * @return Pointer to the current item.
+     * @brief Retrieves the player's current item.
+     * @return A pointer to the current item.
      */
     Item* getCurrentItem() const;
 };

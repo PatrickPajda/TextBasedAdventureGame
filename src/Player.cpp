@@ -3,33 +3,33 @@
  * @date 2024-11, 2024-12
  */
 
-
 #include "Player.hpp"
 #include <iostream>
 
 Player::Player(int initialHealth) : health(initialHealth), currentItem(nullptr) {}
 
 Player::~Player() {
-    delete currentItem; // Clean up item if it exists
+    delete currentItem;
 }
 
 void Player::pickUp(Item* newItem) {
-    if (currentItem == nullptr) {
+    if (!currentItem) {
         currentItem = newItem;
         std::cout << "You picked up: " << newItem->getName() << std::endl;
 
         if (newItem->isDeathItem()) {
-            std::cout << "Oh no! The item is cursed and kills you instantly!" << std::endl;
+            std::cout << "The item is cursed! You die instantly.\n";
             health = 0;
         }
     } else {
-        std::cout << "You already have an item. Drop it first to pick up a new one.\n";
+        std::cout << "Drop your current item first to pick up a new one.\n";
     }
 }
 
 void Player::drop() {
     if (currentItem) {
         std::cout << "You dropped: " << currentItem->getName() << std::endl;
+        delete currentItem;
         currentItem = nullptr;
     } else {
         std::cout << "You have no item to drop.\n";

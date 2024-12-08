@@ -3,33 +3,30 @@
  * @date 2024-11
  */
 
-#include "NPC.h"
-#include <iostream>
+#include "NPC.hpp"
 
-// Constructor
-NPC::NPC(const std::string& npcName, const std::string& npcDialogue, Item* item)
-    : name(npcName), dialogue(npcDialogue), requiredItem(item) {}
+NPC::NPC(const std::string& npcName, const std::string& npcGreeting, Item* item)
+    : name(npcName), greeting(npcGreeting), requiredItem(item), isSolved(false) {}
 
-// Destructor
-NPC::~NPC() {}
-
-// Interact method to display dialogue
-void NPC::interact() const {
-    std::cout << name << " says: " << dialogue << std::endl;
+void NPC::greet() const {
+    std::cout << greeting << std::endl;
 }
 
-// Evaluates if the player's item matches the NPC's required item
-bool NPC::evaluateItem(Item* playerItem) const {
-    if (playerItem == nullptr) {
-        std::cout << name << " says: You have no item to show me!" << std::endl;
-        return false;
-    }
+bool NPC::checkItem(Item* playerItem) {
     if (playerItem->getName() == requiredItem->getName()) {
-        std::cout << name << " says: Yes! This is exactly what I needed!" << std::endl;
+        std::cout << "Correct item! Well done!" << std::endl;
+        setIsSolved(true);
         return true;
     } else {
-        std::cout << name << " says: No, this is not the item I seek." << std::endl;
+        std::cout << "This is not the correct item." << std::endl;
         return false;
     }
 }
 
+bool NPC::getIsSolved() const {
+    return isSolved;
+}
+
+void NPC::setIsSolved(bool solved) {
+    isSolved = solved;
+}

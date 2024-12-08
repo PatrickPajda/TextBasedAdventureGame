@@ -5,37 +5,22 @@
 
 #include "GardenLevel.hpp"
 
-GardenLevel::GardenLevel() {
+GardenLevel::GardenLevel(Player* playerInstance) : Level(playerInstance) {
     setupLevel();
 }
 
 void GardenLevel::setupLevel() {
-    // Initialize rooms with dynamic item names
-    gazebo = LivingRoom();
-    toolShed = RealItemRoom(
-        "You are in a large tool shed. Two interesting items catch your eye.",
-        "Golden Shovel",
-        "Gardening Gloves"
-    );
-    rosePit = FakeItemRoom(
-        "You are in the Fake Item Room. Something feels off about these items.",
-        "Red Rose",
-        "Cursed Pendant"
-    );
-    flowerField = DeathTrapRoom(
-        "You are in a feild of beautiful flowers.",
-        " Will you chosse to sniff them?.",
-        "You sniffed a Poisonus flower and died" 
-    );
+    gazebo = new LivingRoom();
+    toolShed = new RealItemRoom("Tool shed with interesting items.", "Rusted Spade", "Golden Shovel");
+    rosePit = new FakeItemRoom("Rose pit with suspicious items.", "Fake Rose", "Cursed Amulet");
+    flowerField = new DeathTrapRoom("A flower field with a strange smell.", "Smell the flowers?", "The poison knocks you out!");
+
+    // Assign NPC
+    levelNPC = new Witch(toolShed->getRealItem());
 
     // Define room order
-    roomOrder = {
-        &gazebo,
-        &toolShed,
-        &rosePit,
-        &flowerField
-    };
+    roomOrder = {gazebo, toolShed, rosePit, flowerField};
 
-    // Start in the Living Room
-    setCurrentRoom(&gazebo);
+    // Start in Living Room
+    setCurrentRoom(gazebo);
 }

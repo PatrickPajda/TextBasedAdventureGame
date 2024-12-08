@@ -12,15 +12,12 @@
 /**
  * @class HauntedHouse
  * @brief Base class for all rooms in the haunted house.
- *
- * The HauntedHouse class serves as a base for all rooms. It defines the interface
- * for describing rooms and presenting player actions.
  */
 class HauntedHouse {
 protected:
-    std::string description;
+    std::string description; ///< Description of the room.
 
- public:
+public:
     /**
      * @brief Constructs a HauntedHouse object with a description.
      * @param desc A string description of the room.
@@ -33,24 +30,18 @@ protected:
     virtual ~HauntedHouse() = default;
 
     /**
-     * @brief Describe the current room.
+     * @brief Displays the room description.
      */
     virtual void describeRoom() const;
 
     /**
-     * @brief set a map of actions available in the room.
-     * @return A map of action keys to action descriptions.
-     */
-
-
-    /**
-     * @brief Get a map of actions available in the room.
+     * @brief Retrieves available actions in the room.
      * @return A map of action keys to action descriptions.
      */
     virtual std::map<int, std::string> getActions() const = 0;
 
     /**
-     * @brief Get the unique identifier for the room type.
+     * @brief Retrieves the unique identifier for the room type.
      * @return A string representing the room type.
      */
     virtual std::string getRoomType() const = 0;
