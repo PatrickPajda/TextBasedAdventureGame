@@ -36,8 +36,10 @@ void Level::showActions() const {
 
     if (currentRoom) {
         auto actions = currentRoom->getActions();
-        for (const auto& [key, description] : actions) {
-            std::cout << "Press (" << key << ") to " << description << ".\n";
+        for (const auto& action : actions) { // Workaround for structured binding
+            const auto& key = action.first;
+            const auto& description = action.second;
+            std::cout << "Press (" << key << ") to " << description << "." << std::endl;
         }
     }
 }
