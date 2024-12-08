@@ -1,6 +1,6 @@
 /**
- * @author John Uzoka [john.uzoka@uleth.ca]
- * @date 2024-11
+ * @author John Uzoka [john.uzoka@uleth.ca], Patrick Pajda [p.pajda@uleth.ca]
+ * @date 2024-11, 2024-12
  */
 
 #ifndef SKELETON_HPP
@@ -10,7 +10,7 @@
 
 /**
  * @class Skeleton
- * @brief A subclass of NPC that represents a skeleton character.
+ * @brief A subclass of NPC representing a skeleton monster.
  */
 class Skeleton : public NPC {
 public:
@@ -21,13 +21,12 @@ public:
     Skeleton(Item* item);
 
     /**
-     * @brief Interacts with the player.
-     * @param player Pointer to the player instance.
+     * @brief Greets the player as a skeleton.
      */
-    void interact(Player* player) const override;
+    void greet() const override;
 
     /**
-     * @brief Gives a hint to the player.
+     * @brief Provides a hint about the required item.
      */
     void giveHint() const override;
 };

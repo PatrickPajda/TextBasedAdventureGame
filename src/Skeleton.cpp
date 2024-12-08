@@ -1,17 +1,16 @@
 /**
- * @author John Uzoka [john.uzoka@uleth.ca]
- * @date 2024-11
+ * @author John Uzoka [john.uzoka@uleth.ca], Patrick Pajda [p.pajda@uleth.ca]
+ * @date 2024-11, 2024-12
  */
 
-#include "Skeleton.h"
-#include <iostream>
+#include "Skeleton.hpp"
 
-Skeleton::Skeleton(Item* item)
-    : NPC("Skeleton", "You hear bones clattering... Bring me the amulet of the dead!", item) {}
+Skeleton::Skeleton(Item* item) : NPC("Skeleton", item) {}
 
-void Skeleton::interact() const {
-    std::cout << "The Skeleton rattles its bones. " << name << " says: " << dialogue << std::endl;
+void Skeleton::greet() const {
+    std::cout << "Hello...I am a skeleton." << std::endl;
 }
 
-void  Skeleton::dance() const {
+void Skeleton::giveHint() const {
+    std::cout << "You are looking for a skeleton key." << std::endl;
 }

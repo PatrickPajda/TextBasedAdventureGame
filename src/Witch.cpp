@@ -1,17 +1,16 @@
 /**
- * @author John Uzoka [john.uzoka@uleth.ca]
- * @date 2024-11
+ * @author John Uzoka [john.uzoka@uleth.ca], Patrick Pajda [p.pajda@uleth.ca]
+ * @date 2024-11, 2024-12
  */
 
-#include "Witch.h"
-#include <iostream>
+#include "Witch.hpp"
 
-Witch::Witch(Item* item)
-    : NPC("Witch", "Hehehe... I've been expecting you! Do you have the enchanted herb?", item) {}
+Witch::Witch(Item* item) : NPC("Witch", item) {}
 
-void Witch::interact() const {
-    std::cout << "A cackling voice echoes... " << name << " says: " << dialogue << std::endl;
+void Witch::greet() const {
+    std::cout << "Hello...I am a witch." << std::endl;
 }
 
-void Witch::Trick() const {
+void Witch::giveHint() const {
+    std::cout << "You are looking for a broomstick." << std::endl;
 }

@@ -1,6 +1,6 @@
 /**
- * @author John Uzoka [john.uzoka@uleth.ca]
- * @date 2024-12
+ * @author John Uzoka [john.uzoka@uleth.ca], Patrick Pajda [p.pajda@uleth.ca]
+ * @date 2024-11, 2024-12
  */
 
 #ifndef LEVEL_HPP
