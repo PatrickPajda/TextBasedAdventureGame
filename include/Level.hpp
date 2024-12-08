@@ -18,7 +18,7 @@
  */
 class Level {
  protected:
-    std::vector<HauntedHouse*> roomOrder; ///< Ordered list of rooms in the level.
+    std::vector<HauntedHouse*> roomOrder;
     HauntedHouse* currentRoom; ///< Pointer to the current room.
     NPC* levelNPC; ///< Pointer to the NPC for the level.
     bool isLevelComplete; ///< Indicates whether the level is complete.
