@@ -124,25 +124,3 @@ these items.
 4. DeathRoom class: Entering this room or interacting with Certain objects inside results in instant death.
 We also outlined the structure of game levels: Level 1: Main Floor, Level 2: Basement, Level 3: Garden.
 
-3 of December |
-
-* John: Environment and Level classes.
-* Patrick: NPC class.
-* Naomi: Player class.
-* Anita: Item class.
-
-4 of December |
-
-* NPCs: monsters(Skeleton, Witch, Ghost)
-* Environments: LivingRoom, Basement, Garden (as levels) and RealItemRoom, FakeItemRoom, DeathRoom(Death trap)
-* Usable Items: Real items, Fake items, Death items
-* Puzzles: player trying to find the real item to give it to the NPC, player should avoid to go to the DeathRoom
-* How to loss the game:
-1. Player enters to the DeathRoom and dies.
-2. Player pick up the fake item and give it to the NPC and get damage, after geting damage 3 time player dies.
-3. Player pick up the death item and give it to the NPC and dies.
-* Players actions: 
-1. Enteract with NPCs.
-2. Moving between rooms.
-3. Pick up or drop an item.
->>>>>>> 4a4db30ed8c92393a847d1567db4dd0753737dc2
