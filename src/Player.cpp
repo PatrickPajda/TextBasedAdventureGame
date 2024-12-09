@@ -32,7 +32,6 @@ void Player::pickUp(Item* newItem) {
 void Player::drop() {
     if (currentItem) {
         std::cout << "You dropped: " << currentItem->getName() << std::endl;
-        delete currentItem;
         currentItem = nullptr;
     } else {
         std::cout << "You have no item to drop.\n";

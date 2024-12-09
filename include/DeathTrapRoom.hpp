@@ -50,4 +50,3 @@ class DeathTrapRoom : public HauntedHouse {
 };
 
 #endif // DEATHTRAPROOM_HPP
-
