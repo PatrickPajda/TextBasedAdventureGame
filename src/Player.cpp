@@ -40,7 +40,8 @@ void Player::drop() {
 
 void Player::takeDamage(int damage) {
     health -= damage;
-    std::cout << "You took " << damage << " damage! Current health: "<< health << "\n";
+    std::cout << "You took " << damage <<
+    " damage! Current health: "<< health << "\n";
 }
 
 int Player::getHealth() const {
