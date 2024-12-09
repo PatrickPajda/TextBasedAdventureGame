@@ -144,5 +144,57 @@ We also outlined the structure of game levels: Level 1: Main Floor, Level 2: Bas
 * Players actions: 
 1. Enteract with NPCs.
 2. Moving between rooms.
-3. Pick up or drop an item.
->>>>>>> 4a4db30ed8c92393a847d1567db4dd0753737dc2
+3. Pick up or drop an item
+
+
+### Components
+
+# NPCS
+* Ghost - NPC player has to pass in level 1
+* Skeleton - NPC player has to pass in level 2
+* Witch - NPC player has to pass in level 3
+
+# Environments
+* Haunted House - abstract class defining environments
+* LivingRoom - Room where player will interact with the NPC
+* RealItemRoom - This will be a room containing a Real Item and a Fake Item which the player can pick up either
+* DeathItemRoom - This will be a room containing a Fake Item and a Death Item which the player can pick up either, but will die if they pick up the Death Item
+* DeathTrapRoom - This will be a room that if the player enters and interacts with, will drop through a trap door
+and die immediately
+* Level - Class that holds all components and gets pass through Game class to initialize the game
+* Level 1 - First level containing Ghost NPC which player has to bring bedsheets Item to pass to level 2
+* Basement - Second Level containing the Skeleton NPC which player has to bring Skeleton Key Item to pass
+to level 3
+* Garden - Third Level containing the Witch NPC which player has to bring broomstick Item to finish the game
+
+# Usable Items 
+* Real Item - Item that the player gives to the NPC to pass onto the next level
+* Fake Item - If player gives the NPC this item, they take damage
+* Death Item - If player picks this item up, they die instantly
+
+# Puzzles
+* Decipher the the hints the NPCs give and find the correct item, bring the item to the NPC, to pass to the next
+level
+
+I.E The ghost will give you a riddle-esque clue where the player must find the bedsheets item, bring
+it back to the Ghost
+
+* Avoid the Fake Items - Bringing the fake item to the NPC will cause damage to the player. Small hints will 
+help the player avoid these items
+
+* Avoid the Death Items - Picking up a death item instantly kills the player. Small hints will help the player avoid
+these items.
+
+* Avoid Death Trap Room - Player must pick up on clues and hints to avoid the Death Trap Room, which when entered, kills the player immediately. 
+
+# How to lose the game
+
+* By taking damage three times from the NPC by bringing fake items
+* By picking up a Death Item
+* By entering the Trap Room 
+
+# Player actions
+
+* Player can move between rooms
+* Player can pick up and drop items
+* Player can interact with NPC (Option 1. Ask NPC for hint Option 2. Give item to NPC)
