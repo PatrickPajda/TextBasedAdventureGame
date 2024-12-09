@@ -1,27 +1,16 @@
 /**
- * @author Anita Naserfallah
- * @file Item.cpp
- * @brief Represent an object in the game that can be interacted with
+ * @author Anita Naserfallah [anita.naserfallah@uleth.ca], John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-11, 2024-12
  */
 
 #include "Item.hpp"
 
-//Constructor implementation
-Item::Item(std::string name,
- std::string description, bool isPickable)
-    : name(name), description(description), isPickable(isPickable) {}
+Item::Item(std::string name) : name(std::move(name)) {}
 
-//Getter for the name
 std::string Item::getName() const {
     return name;
 }
 
-//Getter for description
-std::string Item::getDescription() const {
-    return description;
-}
-
-//Check if the object can be picked up
-bool Item::canBePicked() const {
-    return isPickable;
+bool Item::isDeathItem() const {
+    return false;
 }

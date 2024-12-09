@@ -1,21 +1,38 @@
-//#include "FakeItemRoom.hpp"
+/**
+ * @author John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-12
+ */
 
-//FakeItemRoom::FakeItemRoom(std::unique_ptr<Item> deathItem,
-//std::unique_ptr<Item> fakeItem) {
-     // Transfer ownership of deathItem
-    //items.push_back(std::move(deathItem));
-    // Transfer ownership of fakeItem
-    //items.push_back(std::move(fakeItem));
-//}
+#include "FakeItemRoom.hpp"
 
-//void FakeItemRoom::describe(){
+FakeItemRoom::FakeItemRoom(const std::string& description,
+                            const std::string& fakeItemName,
+                            const std::string& deathItemName)
+    : HauntedHouse(description),
+      fakeItem(new FakeItem(fakeItemName)),
+      deathItem(new DeathItem(deathItemName)) {}
 
-//}
+FakeItemRoom::~FakeItemRoom() {
+    delete fakeItem;
+    delete deathItem;
+}
 
-//void FakeItemRoom::inspectRoom(){
+std::map<int, std::string> FakeItemRoom::getActions() const {
+    return {
+        {1, "Pick up the " + fakeItem->getName()},
+        {2, "Pick up the " + deathItem->getName()},
+        {3, "Go back to the Living Room."}
+    };
+}
 
-//}
+std::string FakeItemRoom::getRoomType() const {
+    return "FakeItemRoom";
+}
 
-//void FakeItemRoom::inspectRoom(){
+FakeItem* FakeItemRoom::getFakeItem() const {
+    return fakeItem;
+}
 
-//}
+DeathItem* FakeItemRoom::getDeathItem() const {
+    return deathItem;
+}

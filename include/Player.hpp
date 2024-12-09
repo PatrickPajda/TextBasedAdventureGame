@@ -1,53 +1,62 @@
 /**
- * @author Naomi Imiebiakhe [n.imiebiakhe@uleth.ca]
- * @date 2024-11
+ * @author Naomi Imiebiakhe [n.imiebiakhe@uleth.ca], John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-11, 2024-12
  */
 
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 
-#include "RoomNavigation.hpp"
 #include "Item.hpp"
 
 /**
  * @class Player
- * @brief Class repesenting a player in the game
- * @details Manages player stats and intractions with enironments,
- * items and other characters in the game
+ * @brief Represents the player in the game.
  */
-
 class Player {
+ private:
+    int health; ///< The player's health points.
+    Item* currentItem; ///< The item currently held by the player.
+
  public:
     /**
-     * @brief Default constructor
-     * @details Initializes a new Player Instance with defaul values
-     * @param The room in which the player starts the game 
+     * @brief Constructs a Player with initial health.
+     * @param initialHealth The starting health of the player.
      */
-    Player(RoomNavigation* startRoom);
+    Player(int initialHealth);
 
     /**
-     * @brief Getter for player's current room
+     * @brief Destructor for the Player class.
      */
-    RoomNavigation* getCurrentRoom() const;
+    ~Player();
 
     /**
-     * @brief Moves to next room
-     */
-    void move();
-    /** 
-     * @brief Pick up item 
+     * @brief Picks up an item.
+     * @param newItem The item to pick up.
      */
     void pickUp(Item* newItem);
-        /** 
-     * @brief Drop item 
+
+    /**
+     * @brief Drops the current item.
      */
-    void drop(Item* newItem);
+    void drop();
 
-    Item* getItem();
+    /**
+     * @brief Reduces the player's health by the specified amount.
+     * @param damage The amount of damage to apply.
+     */
+    void takeDamage(int damage);
 
- private:
-    RoomNavigation* currentRoom;
-    Item* item;
+    /**
+     * @brief Retrieves the player's current health.
+     * @return The player's current health.
+     */
+    int getHealth() const;
+
+    /**
+     * @brief Retrieves the player's current item.
+     * @return A pointer to the current item.
+     */
+    Item* getCurrentItem() const;
 };
 
-#endif //PLAYER_HPP_INCLUDED
+#endif // PLAYER_HPP

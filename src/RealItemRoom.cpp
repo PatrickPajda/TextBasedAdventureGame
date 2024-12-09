@@ -1,40 +1,38 @@
+/**
+ * @author John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-12
+ */
+
 #include "RealItemRoom.hpp"
 
-RealItemRoom::RealItemRoom(Item* realItem, std::vector<Item*> fakeItems) : HauntedHouse("Real Item Room"), realItem_(realItem), fakeItems_(std::move(fakeItems)) {}
+RealItemRoom::RealItemRoom(const std::string& description,
+                            const std::string& fakeItemName,
+                            const std::string& realItemName)
+    : HauntedHouse(description),
+      fakeItem(new FakeItem(fakeItemName)),
+      realItem(new RealItem(realItemName)) {}
 
 RealItemRoom::~RealItemRoom() {
-    delete realItem_;
-
-    for (Item* item : fakeItems_) {
-        delete item;
-    }
+    delete fakeItem;
+    delete realItem;
 }
 
-void RealItemRoom::describe() {
-    std::cout << "This is the Real Item Room." << std::endl;
+std::map<int, std::string> RealItemRoom::getActions() const {
+    return {
+        {1, "Pick up the " + fakeItem->getName()},
+        {2, "Pick up the " + realItem->getName()},
+        {3, "Go back to the Living Room."}
+    };
 }
 
-void RealItemRoom::inspectRoom() {
-    while (true) {
-    std::cout << "Which item would you like to pick up?" << std::endl;
-    
-    std::cout << "1. " << realItem_->getName() << std::endl;
-    
-    for (size_t i = 0; i < fakeItems_.size(); ++i) {
-        std::cout << i + 2 << ". " << fakeItems_[i]->getName() << std::endl;
-    }
-
-    std::cout << "Which item do you want to pick up: " << std::endl;
-    int choice;
-    std::cin >> choice;
-
-    if (choice == 1) {
-        std::cout << "You picked up the " << realItem_->getName() << "!" << std::endl;
-    } else if (choice >= 2 && choice <= static_cast<int>(fakeItems_.size() + 1)) {
-        std::cout << "You picked up the " << fakeItems_[choice - 2]->getName() << "!" << std::endl;
-    } else {
-        std::cout << "Invalid choice. Please try again." << std::endl;
-    }
+std::string RealItemRoom::getRoomType() const {
+    return "RealItemRoom";
 }
 
+FakeItem* RealItemRoom::getFakeItem() const {
+    return fakeItem;
+}
+
+RealItem* RealItemRoom::getRealItem() const {
+    return realItem;
 }

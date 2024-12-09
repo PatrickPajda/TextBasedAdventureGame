@@ -26,7 +26,7 @@ void NPC::interact(Player* player) {
     if (choice == "1") {
         giveHint();
     } else if (choice == "2") {
-        checkItem(player->getItem());
+        checkItem(player->getCurrentItem());
     } else {
         std::cout << "Invalid choice. Please try again." << std::endl;
     }

@@ -1,60 +1,66 @@
 /**
- * @file FakeItemRoom.hpp
- * @brief Defines the FakeItemRoom class, a specific type of room in the haunted house adventure game.
+ * @author John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-12
  */
 
-//#ifndef FAKEITEMROM_HPP_INCLUDED
-//#define FAKEITEMROM_HPP_INCLUDED
+#ifndef FAKEITEMROOM_HPP
+#define FAKEITEMROOM_HPP
 
-//#include <iostream>
-//#include <string>
-//#include "HauntedHouse.hpp"
-//#include "Item.hpp"
+#include <map>
+#include <string>
+#include "HauntedHouse.hpp"
+#include "FakeItem.hpp"
+#include "DeathItem.hpp"
 
 /**
  * @class FakeItemRoom
- * @brief Represents the FakeItemRoom in the haunted house.
- * 
- * This class inherits from HauntedHouse and provides a specific implementation
- * for the DeathTrap room. It overrides the describe() method to give a description of the room.
+ * @brief A room containing one fake item and one deadly item.
  */
-//class FakeItemRoom : public HauntedHouse {
-//public:
-    /**
-     * @brief Default constructor for the FakeItemRoom class.
-     * 
-     * Initializes the FakeItem with a predefined description and room items.
-     */
-    //FakeItemRoom(std::unique_ptr<Item>
-    //deathItem, std::unique_ptr<Item> fakeItem);
+class FakeItemRoom : public HauntedHouse {
+ private:
+    FakeItem* fakeItem; ///< Pointer to the fake item in the room.
+    DeathItem* deathItem; ///< Pointer to the deadly item in the room.
 
+ public:
     /**
-     * @brief Describes the FakeItemRoom.
-     * 
-     * Overrides the describe() function from HauntedHouse to print out a description
-     * specific to the room Provides a description of the storage room containing two items and exit options.
+     * @brief Constructs a FakeItemRoom with specific items.
+     * @param description Description of the room.
+     * @param fakeItemName Name of the fake item.
+     * @param deathItemName Name of the deadly item.
      */
-    //void describe() override;
+    FakeItemRoom(const std::string& description,
+                    const std::string& fakeItemName,
+                    const std::string& deathItemName);
 
     /**
-     * @brief Player inspects the room 
-     * 
-     * Overrides the inspectRoom() function from HauntedHouse to give options 
-     * for what to do in a specific to the FakeItem room.
-     * Player is given the option to pick up one of two items.
-     * 
+     * @brief Destructor for FakeItemRoom.
+     * Deletes dynamically allocated items.
      */
-    //void inspectRoom() override;
+    ~FakeItemRoom();
 
     /**
-     * @brief Causes the player to fall into a trap, resulting in death. 
-     * 
-     * function that kills the player by outputing a death message and then we can call the game end contition
+     * @brief Retrieves available actions in the room.
+     * @return A map of action keys to action descriptions.
      */
-//void updateItems()
-//protected:
-    //std::vector<std::unique_ptr<Item>> items;
+    std::map<int, std::string> getActions() const override;
 
-//};
+    /**
+     * @brief Retrieves the unique identifier for the room type.
+     * @return A string representing the room type.
+     */
+    std::string getRoomType() const override;
 
-//#endif // FAKEITEMROM_HPP_INCLUDED
+    /**
+     * @brief Retrieves the pointer to the fake item.
+     * @return Pointer to the fake item.
+     */
+    FakeItem* getFakeItem() const;
+
+    /**
+     * @brief Retrieves the pointer to the deadly item.
+     * @return Pointer to the deadly item.
+     */
+    DeathItem* getDeathItem() const;
+};
+
+#endif // FAKEITEMROOM_HPP
