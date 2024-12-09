@@ -43,25 +43,27 @@ void Game::start() {
         currentLevel->describeCurrentRoom();
         currentLevel->showActions();
 
-        int choice;
+        char choice;
         std::cout << "Enter your choice (or 0 to exit): ";
         std::cin >> choice;
 
-        if (choice == 0) {
+        if (choice == '0') { // Exit game
             endGame();
-        } else {
-            currentLevel->handleInput(choice);
+            break;
+        }
 
-            if (currentLevel->checkLevelComplete()) {
-                std::cout << "Level completed! Moving to the next level...\n";
-                loadNextLevel();
-            } else if (player->getHealth() <= 0) {
-                std::cout << "You have died! Restarting the game...\n";
-                resetGame();
-            }
+        currentLevel->handleInput(choice);
+
+        if (player->getHealth() <= 0) {
+            std::cout << "You have died! Restarting the game...\n";
+            resetGame();
+        } else if (currentLevel->checkLevelComplete()) {
+            std::cout << "Level completed! Loading the next level...\n";
+            loadNextLevel();
         }
     }
 }
+
 
 void Game::loadNextLevel() {
     delete currentLevel;
@@ -78,7 +80,7 @@ void Game::loadNextLevel() {
 
 void Game::resetGame() {
     currentLevelIndex = 0;
-    player->takeDamage(-player->getHealth()); // Restore player health
+    player->setHealth(3); // Restore player health
     initializeGame();
 }
 

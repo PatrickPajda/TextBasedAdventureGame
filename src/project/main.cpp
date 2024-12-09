@@ -1,28 +1,29 @@
-#include <iostream>
-#include <string>
-#include "BasementLevel.hpp"
-#include "DeathItem.hpp"
-#include "DeathTrapRoom.hpp"
-#include "FakeItem.hpp"
-#include "FakeItemRoom.hpp"
 #include "Game.hpp"
-#include "GardenLevel.hpp"
-#include "Ghost.hpp"
-#include "HauntedHouse.hpp"
-#include "Item.hpp"
-#include "Level.hpp"
-#include "LivingRoom.hpp"
-#include "MainFloorLevel.hpp"
-#include "NPC.hpp"
-#include "Player.hpp"
-#include "RealItem.hpp"
-#include "RealItemRoom.hpp"
-#include "RoomNavigation.hpp"
-#include "Skeleton.hpp"
-#include "Witch.hpp"
 
+/**
+ * @brief Main entry point for the game.
+ * 
+ * This function initializes and starts the game.
+ * 
+ * @return Exit status code.
+ */
 int main() {
-    Game game;
-    game.start();
+    try {
+        // Create the game instance
+        Game hauntedHouseGame;
 
+        // Start the game
+        hauntedHouseGame.start();
+
+        // Exit successfully
+        return 0;
+    } catch (const std::exception& e) {
+        // Catch any runtime exceptions and display an error message
+        std::cerr << "An error occurred: " << e.what() << std::endl;
+        return 1;
+    } catch (...) {
+        // Catch any other unexpected errors
+        std::cerr << "An unknown error occurred." << std::endl;
+        return 1;
+    }
 }

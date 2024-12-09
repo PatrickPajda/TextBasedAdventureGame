@@ -4,13 +4,14 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
+#include <vector>
+#include <functional>
 #include "Player.hpp"
 #include "Level.hpp"
 #include "MainFloorLevel.hpp"
 #include "BasementLevel.hpp"
 #include "GardenLevel.hpp"
-#include <vector>
-#include <functional>
+
 
 /**
  * @class Game

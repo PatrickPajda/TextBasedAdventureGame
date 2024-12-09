@@ -17,7 +17,7 @@ void MainFloorLevel::setupLevel() {
     diningHall = new FakeItemRoom(
     "A grand dining hall with mysterious objects.",
     "Goblet",
-    "Cursed Plate");
+    "Fancy Plate");
     parlor = new DeathTrapRoom("A luxurious parlor with a deadly secret.",
     "Touch the antique clock?",
     "A trapdoor opens, and you fall to your doom!");

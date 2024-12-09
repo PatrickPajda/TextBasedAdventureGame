@@ -6,7 +6,7 @@ bool NPC::checkItem(Item* playerItem) {
         setIsSolved(true);
         return true;
     } else {
-        std::cout << "This is not the correct item!" << std::endl;
+        // std::cout << "This is not the correct item!" << std::endl;
         return false;
     }
 }
@@ -20,14 +20,38 @@ void NPC::interactMenu() {
 
 void NPC::interact(Player* player) {
     std::string choice;
-    interactMenu();
-    std::cout << "Choice: ";
-    std::getline(std::cin, choice);
-    if (choice == "1") {
-        giveHint();
-    } else if (choice == "2") {
-        checkItem(player->getCurrentItem());
-    } else {
-        std::cout << "Invalid choice. Please try again." << std::endl;
+    while (true) { // Loop until valid input is provided
+        interactMenu();
+        std::cout << "Choice: ";
+        std::cin >> choice;
+
+        if (choice == "1") {
+            giveHint();
+            break; // Exit interaction after hint
+        } else if (choice == "2") {
+            checkItem(player->getCurrentItem());
+            if (checkItem(player->getCurrentItem())) {
+                std::cout << "Correct item given. NPC challenge solved!\n";
+                break; // Exit interaction after solving challenge
+            }else {
+                 if (player->getHealth() > 1){
+                    player->takeDamage(1);
+                    std::cout << name 
+                    << ": You gave me the wrong item!"
+                    << " Ask for a hint to try again\n";
+                }else{if (player->getHealth() == 1){
+                    player->takeDamage(1);
+                    std::cout << name 
+                    << ": You gave me the wrong item!"
+                    << " For this you die!\n";
+                    break;
+                }
+               }
+            }
+        } else {
+            std::cout << "Invalid choice. Please try again.\n";
+        }
     }
 }
+
+

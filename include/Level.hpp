@@ -9,6 +9,9 @@
 #include <vector>
 #include <map>
 #include "HauntedHouse.hpp"
+#include "DeathTrapRoom.hpp"
+#include "RealItemRoom.hpp"
+#include "FakeItemRoom.hpp"
 #include "Player.hpp"
 #include "NPC.hpp"
 
@@ -72,7 +75,7 @@ class Level {
      * @brief Handles player input and transitions between rooms.
      * @param choice The player's action choice.
      */
-    void handleInput(int choice);
+    void handleInput(char choice);
 
     /**
      * @brief Checks if the level is complete.

@@ -51,11 +51,13 @@ void Level::showActions() const {
     }
 }
 
-void Level::handleInput(int choice) {
-    if (choice == 'H') {
+void Level::handleInput(char choice) {
+    if (choice == 'H' || choice == 'h') { // Help Menu
         showHelpMenu();
         return;
-    } else if (choice == 'D') {
+    }
+
+    if (choice == 'D' || choice == 'd') { // Drop Item
         player->drop();
         return;
     }
@@ -65,34 +67,62 @@ void Level::handleInput(int choice) {
         return;
     }
 
-    auto actions = currentRoom->getActions();
-    if (actions.find(choice) == actions.end()) {
-        std::cout << "Invalid choice. Try again.\n";
-        return;
-    }
+    // Convert char to integer if it's a digit
+    if (isdigit(choice)) {
+        int numericChoice = choice - '0'; // Convert char to int (e.g., '1' -> 1)
 
-    std::string roomType = currentRoom->getRoomType();
+        auto actions = currentRoom->getActions();
+        if (actions.find(numericChoice) == actions.end()) {
+            std::cout << "Invalid choice. Try again.\n";
+            return;
+        }
 
-    if (roomType == "LivingRoom" && choice == 1) {
-        if (levelNPC) {
-            levelNPC->interact(player);
-            if (levelNPC->getIsSolved()) {
-                isLevelComplete = true;
-                std::cout << "Level completed! Well done!\n";
+        std::string roomType = currentRoom->getRoomType();
+
+        if (roomType == "LivingRoom") {
+            if (numericChoice >= 2 && numericChoice <= 4) {
+                setCurrentRoom(roomOrder[numericChoice - 1]); // Move to selected room
+            } else if (numericChoice == 1) {
+                if (levelNPC) {
+                    levelNPC->interact(player);
+                    if (levelNPC->getIsSolved()) {
+                        isLevelComplete = true;
+                        std::cout << "Level completed! Well done!\n";
+                    }
+                }
+            }
+        } else if (roomType == "RealItemRoom") {
+            auto* realRoom = static_cast<RealItemRoom*>(currentRoom);
+            if (numericChoice == 1) {
+                player->pickUp(realRoom->getFakeItem());
+            } else if (numericChoice == 2) {
+                player->pickUp(realRoom->getRealItem());
+            } else if (numericChoice == 3) {
+                setCurrentRoom(roomOrder[0]); // Return to Living Room
+            }
+        } else if (roomType == "FakeItemRoom") {
+            auto* fakeRoom = static_cast<FakeItemRoom*>(currentRoom);
+            if (numericChoice == 1) {
+                player->pickUp(fakeRoom->getFakeItem());
+            } else if (numericChoice == 2) {
+                player->pickUp(fakeRoom->getDeathItem());
+            } else if (numericChoice == 3) {
+                setCurrentRoom(roomOrder[0]); // Return to Living Room
+            }
+        } else if (roomType == "DeathTrapRoom") {
+            auto* deathTrapRoom = static_cast<DeathTrapRoom*>(currentRoom);
+            if (numericChoice == 1) {
+                deathTrapRoom->triggerTrap();
+                player->takeDamage(player->getHealth());
+            } else if (numericChoice == 2) {
+                setCurrentRoom(roomOrder[0]); // Return to Living Room
             }
         }
-    } else if (roomType == "LivingRoom" && choice >= 2 && choice <= 4) {
-        setCurrentRoom(roomOrder[choice - 1]);
-    } else if (roomType == "RealItemRoom" || roomType == "FakeItemRoom") {
-        if (choice == 3) {
-            setCurrentRoom(roomOrder[0]);
-        }
-    } else if (roomType == "DeathTrapRoom") {
-        if (choice == 2) {
-            setCurrentRoom(roomOrder[0]);
-        }
+    } else {
+        std::cout << "Invalid input. Please try again.\n";
     }
 }
+
 
 void Level::showHelpMenu() const {
     std::cout
