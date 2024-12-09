@@ -31,5 +31,3 @@ void NPC::interact(Player* player) {
         std::cout << "Invalid choice. Please try again." << std::endl;
     }
 }
-
-
