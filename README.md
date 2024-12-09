@@ -124,3 +124,55 @@ these items.
 4. DeathRoom class: Entering this room or interacting with Certain objects inside results in instant death.
 We also outlined the structure of game levels: Level 1: Main Floor, Level 2: Basement, Level 3: Garden.
 
+### Design and Solid Principles
+
+* Single Responsibility Principle (SRP)
+
+* Examples in the Design:
+Player class is responsible only for managing the player's state (health, current item, etc.).
+NPC and its derived classes (Ghost, Skeleton, Witch) handle NPC-specific behavior such as interacting with the player and providing hints.
+Room classes like LivingRoom, FakeItemRoom, and RealItemRoom focus on the behavior of specific rooms, such as item management and interaction logic.
+Game class manages the overall game flow, including level transitions, game initialization, and status display.
+Each class has a clear, single responsibility, making the design modular and easier to update or extend.
+
+* Open/Closed Principle (OCP)
+Abstract base classes like HauntedHouse, NPC, and Item provide interfaces that allow for adding new room types, NPCs, or items without modifying the existing code. For example:
+New room types (e.g., TrapRoom, SecretRoom) can inherit from HauntedHouse.
+New NPC types (e.g., Zombie) can inherit from NPC and implement their own behavior.
+The Level base class allows new levels to be added (e.g., AtticLevel) without changing the existing levels (MainFloorLevel, BasementLevel, GardenLevel).
+The design is extensible and supports adding new features without altering the existing structure.
+
+* Liskov Substitution Principle (LSP)
+Examples in the Design:
+Derived classes like LivingRoom, FakeItemRoom, and DeathTrapRoom can replace their base class HauntedHouse without breaking the game logic. For example, any room can be used in the roomOrder vector in the Level class.
+Similarly, derived classes like Ghost, Skeleton, and Witch can substitute NPC wherever an NPC is required.
+By ensuring that derived classes correctly implement and extend the behavior of their base classes, the design maintains compatibility and functionality.
+
+* Interface Segregation Principle (ISP)
+
+Examples in the Design:
+Abstract base classes like HauntedHouse, NPC, and Item define specific and relevant methods for their respective domains. For example:
+HauntedHouse includes methods like getActions() and getRoomType() specific to room behavior.
+NPC focuses on methods for interaction and hints (greet(), giveHint()).
+Item includes methods relevant to item behavior (getName(), isDeathItem()).
+Classes are not burdened with irrelevant methods, adhering to the ISP.
+
+
+* Dependency Inversion Principle (DIP)
+Examples in the Design:
+The Level class depends on the abstract HauntedHouse class rather than specific room implementations. This allows for flexibility in adding or modifying room types without changing the Level logic.
+The Game class depends on the abstract Level class and uses a vector of level factories (std::vector<std::function<Level*()>>) to decouple level creation from the Game logic.
+NPC interactions depend on the abstract Item class, making it possible to add new item types (e.g., CursedItem) without modifying existing NPC logic.
+Abstractions (base classes) are central to the design, reducing coupling between high-level and low-level components.
+
+### Additional Properties
+* Encapsulation and Modularity:
+Data members are private, with controlled access through getter and setter methods (e.g., getHealth(), setHealth() in Player).
+Classes are modular, with clear boundaries for responsibilities, ensuring encapsulation of functionality.
+
+* Polymorphism and Extensibility:
+Polymorphism is heavily used through abstract base classes (HauntedHouse, NPC, Item, Level), enabling the addition of new functionality without altering existing code.
+
+* Adherence to Design Patterns:
+Factory Pattern: Level creation is handled via factory functions (std::function<Level*()>) in the Game class.
+Strategy Pattern: Different room behaviors are encapsulated in room classes, and NPC-specific behavior is encapsulated in NPC subclasses.
