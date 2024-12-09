@@ -42,6 +42,7 @@ Naomi - Room Navigation class
 November 21 
 As of today, we have completed the basic implementation of core functionalities. Players can now Move between different rooms, Pick up and drop items, interact with rooms, and interact with NPCs.
 we plan to design and implement classes and features:
+<<<<<<< HEAD
 
 Patrick - Haunted House LiviginRoom Class
 John - NPC Class
@@ -116,3 +117,32 @@ these items.
 * Player can move between rooms
 * Player can pick up and drop items
 * Player can interact with NPC (Option 1. Ask NPC for hint Option 2. Give item to NPC)
+=======
+1. LivingRoom class: serves as a general area for player interaction.
+2. RealItemRoom class: contains both real and fake items. players must find the correct(real) item to give to the NPC to progress to the next level. Giving a fake item results in the payer taking damage.
+3. FakeItemRoom class: contains fake and death items. Giving a fake item to the NPC will cause damage and giving fake item to NPC more than 2 times results in death. Picking up or interacting with a death item results in instant death.
+4. DeathRoom class: Entering this room or interacting with Certain objects inside results in instant death.
+We also outlined the structure of game levels: Level 1: Main Floor, Level 2: Basement, Level 3: Garden.
+
+3 of December |
+
+* John: Environment and Level classes.
+* Patrick: NPC class.
+* Naomi: Player class.
+* Anita: Item class.
+
+4 of December |
+
+* NPCs: monsters(Skeleton, Witch, Ghost)
+* Environments: LivingRoom, Basement, Garden (as levels) and RealItemRoom, FakeItemRoom, DeathRoom(Death trap)
+* Usable Items: Real items, Fake items, Death items
+* Puzzles: player trying to find the real item to give it to the NPC, player should avoid to go to the DeathRoom
+* How to loss the game:
+1. Player enters to the DeathRoom and dies.
+2. Player pick up the fake item and give it to the NPC and get damage, after geting damage 3 time player dies.
+3. Player pick up the death item and give it to the NPC and dies.
+* Players actions: 
+1. Enteract with NPCs.
+2. Moving between rooms.
+3. Pick up or drop an item.
+>>>>>>> 4a4db30ed8c92393a847d1567db4dd0753737dc2
