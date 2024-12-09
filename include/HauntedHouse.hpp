@@ -1,50 +1,50 @@
 /**
- * @file HauntedHouse.hpp
- * @brief Defines the abstract base class for different environments in a haunted house adventure game.
+ * @author John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-12
  */
 
-#ifndef HAUNTEDHOUSE_HPP_INCLUDED
-#define HAUNTEDHOUSE_HPP_INCLUDED
+#ifndef HAUNTEDHOUSE_HPP
+#define HAUNTEDHOUSE_HPP
 
-#include <iostream>
 #include <string>
+#include <map>
 
 /**
  * @class HauntedHouse
- * @brief Abstract base class representing a room in the haunted house.
- * 
- * This class provides a foundation for different rooms in the haunted house game. Each room type 
- * derived from this class must implement the describe() method to provide its own description.
+ * @brief Base class for all rooms in the haunted house.
  */
 class HauntedHouse {
+ protected:
+    std::string description; ///< Description of the room.
+
  public:
     /**
+     * @brief Constructs a HauntedHouse object with a description.
+     * @param desc A string description of the room.
+     */
+    HauntedHouse(const std::string& desc);
+
+    /**
      * @brief Virtual destructor.
-     * 
-     * Ensures derived class destructors are called correctly.
      */
     virtual ~HauntedHouse() = default;
 
     /**
-     * @brief Pure virtual function for describing the room.
-     * 
-     * Derived classes must implement this function to provide a description of the specific room.
+     * @brief Displays the room description.
      */
-    virtual void describe() = 0;
+    virtual void describeRoom() const;
 
- protected:
     /**
-     * @brief Protected constructor for the HauntedHouse class.
-     * 
-     * Initializes the room's description.
-     * 
-     * @param desc A string description of the room.
+     * @brief Retrieves available actions in the room.
+     * @return A map of action keys to action descriptions.
      */
-    HauntedHouse(const std::string& desc) : description(desc) {}
+    virtual std::map<int, std::string> getActions() const = 0;
 
-    /** @brief A string containing the room's description. */
-    std::string description;
+    /**
+     * @brief Retrieves the unique identifier for the room type.
+     * @return A string representing the room type.
+     */
+    virtual std::string getRoomType() const = 0;
 };
 
-#endif // HAUNTEDHOUSE_HPP_INCLUDED
-
+#endif // HAUNTEDHOUSE_HPP

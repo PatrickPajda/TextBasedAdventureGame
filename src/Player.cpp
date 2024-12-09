@@ -1,37 +1,57 @@
-#include "Player.hpp"
 
+/**
+ * @author Naomi Imiebiakhe [n.imiebiakhe@uleth.ca], John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-11, 2024-12
+ */
+
+#include "Player.hpp"
 #include <iostream>
 
+Player::Player(int initialHealth) :
+            health(initialHealth),
+            currentItem(nullptr) {}
 
-Player::Player(RoomNavigation* startRoom) : currentRoom(startRoom) {}
-
-RoomNavigation* Player::getCurrentRoom() const {
-    return currentRoom;
-}
-
-void Player::move() {
-    if (currentRoom != nullptr) {
-        currentRoom = currentRoom->nextRoom;
-        std::cout << "You are in the next room!" << std::endl;
-    } else {
-        std::cout << "There is no other room to move to!" << std::endl;
-    }
+Player::~Player() {
+    delete currentItem;
 }
 
 void Player::pickUp(Item* newItem) {
-    if (item == nullptr) {
-        item = newItem;
-        std::cout << "You picked up an Item!" << std::endl;
+    if (!currentItem) {
+        currentItem = newItem;
+        std::cout << "You picked up: " << newItem->getName() << std::endl;
+
+        if (newItem->isDeathItem()) {
+            std::cout << "The item is cursed! You die instantly.\n";
+            health = 0;
+        }
     } else {
-        std::cout << "You already picked up an Item!" << std::endl;
+        std::cout << "Drop your current item first to pick up a new one.\n";
     }
 }
 
-void Player::drop(Item* newItem) {
-    if (item == nullptr) {
-        std::cout << "You have no items to drop silly." << std::endl;
+void Player::drop() {
+    if (currentItem) {
+        std::cout << "You dropped: " << currentItem->getName() << std::endl;
+        delete currentItem;
+        currentItem = nullptr;
     } else {
-    std::cout << "You dropped the item!" << std::endl;
-    item = nullptr;
+        std::cout << "You have no item to drop.\n";
     }
+}
+
+void Player::takeDamage(int damage) {
+    health -= damage;
+    std::cout << "You took " << damage << " damage! Current health: "<< health << "\n";
+}
+
+int Player::getHealth() const {
+    return health;
+}
+
+Item* Player::getCurrentItem() const {
+    return currentItem;
+}
+
+void Player::setHealth(int newhealth) {
+    health = newhealth;
 }

@@ -1,54 +1,44 @@
 /**
- * @author Anita Naserfallah
- * @file InteractObject.cpp
- * @brief Represent an Item in the game that can be interacted with
+ * @author Anita Naserfallah [anita.naserfallah@uleth.ca], John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-11, 2024-12
  */
 
-#ifndef ITEM_H
-#define ITEM_H
+#ifndef ITEM_HPP
+#define ITEM_HPP
 
-#include <iostream>
 #include <string>
 
 /**
  * @class Item
- * @brief Represents an Item in the game that can be interacted with. 
+ * @brief Represents an item in the game.
  */
-
 class Item {
+ protected:
+    std::string name; ///< The name of the item.
+
  public:
     /**
-     * @brief Constructs an Item.
-     * 
-     * @param name The name of the Item.
-     * @param description The desription of the Item.
-     * @param isPickable Indicates if the Item can be picked
+     * @brief Constructs an Item with a name.
+     * @param name The name of the item.
      */
-    Item(std::string name, std::string description,
-     bool isPickable);
+    explicit Item(std::string name);
 
     /**
-     * @brief Gets the name of the Item.
-     * @return The name of the Item.
+     * @brief Virtual destructor for the Item class.
+     */
+    virtual ~Item() = default;
+
+    /**
+     * @brief Retrieves the name of the item.
+     * @return The item's name.
      */
     std::string getName() const;
 
     /**
-     * @brief Gets the description of the Item.
-     * @return The description of the Item.
+     * @brief Checks if the item is a death item.
+     * @return True if the item is a death item, false otherwise.
      */
-    std::string getDescription() const;
-
-    /**
-     * @brief Checks if the Item can be picked up.
-     * @return True if the Item is pickable, false otherwise.
-     */
-    bool canBePicked() const;
-
- private:
-    std::string name;
-    std::string description;
-    bool isPickable;
+    virtual bool isDeathItem() const;
 };
 
-#endif //ITEM_HPP
+#endif // ITEM_HPP

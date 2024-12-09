@@ -1,26 +1,38 @@
+/**
+ * @author John Uzoka [john.uzoka@uleth.ca]
+ * @date 2024-12
+ */
 
-//#include "RealItemRoom.hpp"
+#include "RealItemRoom.hpp"
 
-//RealItemRoom::RealItemRoom
-//(std::unique_ptr<Item> realItem,
-//std::unique_ptr<Item> //fakeItem) {
-    // Transfer ownership of realItem
-    //items.push_back(std::move(realItem));
-    // Transfer ownership of fakeItem
-    //items.push_back(std::move(fakeItem));
-//}
+RealItemRoom::RealItemRoom(const std::string& description,
+                            const std::string& fakeItemName,
+                            const std::string& realItemName)
+    : HauntedHouse(description),
+      fakeItem(new FakeItem(fakeItemName)),
+      realItem(new RealItem(realItemName)) {}
 
-//RealItemRoom::~RealItemRoom(){
+RealItemRoom::~RealItemRoom() {
+    delete fakeItem;
+    delete realItem;
+}
 
-//}
-//void RealItemRoom::describe(){
+std::map<int, std::string> RealItemRoom::getActions() const {
+    return {
+        {1, "Pick up the " + fakeItem->getName()},
+        {2, "Pick up the " + realItem->getName()},
+        {3, "Go back to the Living Room."}
+    };
+}
 
-//}
+std::string RealItemRoom::getRoomType() const {
+    return "RealItemRoom";
+}
 
-//void RealItemRoom::inspectRoom(){
+FakeItem* RealItemRoom::getFakeItem() const {
+    return fakeItem;
+}
 
-//}
-
-//void RealItemRoom::inspectRoom(){
-
-//}
+RealItem* RealItemRoom::getRealItem() const {
+    return realItem;
+}
