@@ -69,7 +69,8 @@ void Level::handleInput(char choice) {
 
     // Convert char to integer if it's a digit
     if (isdigit(choice)) {
-        int numericChoice = choice - '0'; // Convert char to int (e.g., '1' -> 1)
+         // Convert char to int (e.g., '1' -> 1)
+        int numericChoice = choice - '0';
 
         auto actions = currentRoom->getActions();
         if (actions.find(numericChoice) == actions.end()) {
@@ -81,7 +82,8 @@ void Level::handleInput(char choice) {
 
         if (roomType == "LivingRoom") {
             if (numericChoice >= 2 && numericChoice <= 4) {
-                setCurrentRoom(roomOrder[numericChoice - 1]); // Move to selected room
+                 // Move to selected room
+                setCurrentRoom(roomOrder[numericChoice - 1]);
             } else if (numericChoice == 1) {
                 if (levelNPC) {
                     levelNPC->interact(player);
@@ -94,7 +96,8 @@ void Level::handleInput(char choice) {
         } else if (roomType == "RealItemRoom") {
             auto* realRoom = static_cast<RealItemRoom*>(currentRoom);
             if (numericChoice == 1) {
-                std::cout << "You picked up the fake item: " << realRoom->getFakeItem()->getName() << ".\n";
+                std::cout << "You picked up the fake item: " <<
+                realRoom->getFakeItem()->getName() << ".\n";
                 player->pickUp(realRoom->getFakeItem());
             } else if (numericChoice == 2) {
                 player->pickUp(realRoom->getRealItem());

@@ -6,7 +6,10 @@
 #include "Game.hpp"
 #include <iostream>
 
-Game::Game() : player(new Player(3)), currentLevel(nullptr), currentLevelIndex(0), isRunning(false) {
+Game::Game() : player(new Player(3)),
+                currentLevel(nullptr),
+                currentLevelIndex(0),
+                isRunning(false) {
     // Define the level sequence
     levelSequence = {
         [this]() { return new MainFloorLevel(player); },
@@ -86,5 +89,6 @@ void Game::resetGame() {
 
 void Game::endGame() {
     isRunning = false;
-    std::cout << "---------- Game ended. Thank you for playing Haunted House! ----------\n";
+    std::cout <<
+"---------- Game ended. Thank you for playing Haunted House! ----------\n";
 }
