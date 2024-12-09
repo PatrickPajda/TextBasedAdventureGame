@@ -57,6 +57,11 @@ class Player {
      * @return A pointer to the current item.
      */
     Item* getCurrentItem() const;
+
+   /**
+   * @brief sets the player's current health.
+   */
+    void setHealth(int newHealth);
 };
 
 #endif // PLAYER_HPP
