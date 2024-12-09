@@ -1,3 +1,4 @@
+
 /**
  * @author Naomi Imiebiakhe [n.imiebiakhe@uleth.ca], John Uzoka [john.uzoka@uleth.ca]
  * @date 2024-11, 2024-12
@@ -40,8 +41,7 @@ void Player::drop() {
 
 void Player::takeDamage(int damage) {
     health -= damage;
-    std::cout << "You took " << damage <<
-    " damage! Current health: "<< health << "\n";
+    std::cout << "You took " << damage << " damage! Current health: "<< health << "\n";
 }
 
 int Player::getHealth() const {

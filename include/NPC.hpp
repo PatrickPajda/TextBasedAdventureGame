@@ -23,9 +23,9 @@
  */
 class NPC {
  protected:
-    std::string name;
-    Item* requiredItem;
-    bool isSolved;
+    std::string name;      /**< The name of the NPC. */
+    Item* requiredItem;    /**< The item required by the NPC for progression. */
+    bool isSolved;         /**< Status indicating if the NPC's challenge is solved. */
 
  public:
     /**

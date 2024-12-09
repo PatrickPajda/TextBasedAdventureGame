@@ -18,10 +18,10 @@
  * @brief Class for managing the entire game flow.
  */
 class Game {
- private:
+private:
     Player* player; ///< Pointer to the player object.
     Level* currentLevel; ///< Pointer to the current level.
-    std::vector<std::function<Level*()>> levelSequence;
+    std::vector<std::function<Level*()>> levelSequence; ///< Sequence of level factories.
     int currentLevelIndex; ///< Index of the current level.
     bool isRunning; ///< Tracks if the game is running.
 
@@ -50,7 +50,7 @@ class Game {
      */
     void endGame();
 
- public:
+public:
     /**
      * @brief Constructs the Game object.
      */

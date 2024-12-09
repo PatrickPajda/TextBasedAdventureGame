@@ -16,7 +16,7 @@ void GardenLevel::setupLevel() {
     "Golden Shovel");
     rosePit = new FakeItemRoom("Rose pit with suspicious items.",
     "Rose",
-    "Cursed Amulet");
+    "Ancient Amulet");
     flowerField = new DeathTrapRoom("A flower field with a strange smell.",
     "Smell the flowers?",
     "The poison knocks you out!");
@@ -25,7 +25,7 @@ void GardenLevel::setupLevel() {
     levelNPC = new Witch(toolShed->getRealItem());
 
     // Define room order
-    roomOrder = {gazebo, toolShed, rosePit, flowerField};
+    roomOrder = {gazebo, rosePit, flowerField, toolShed};
 
     // Start in Living Room
     setCurrentRoom(gazebo);
